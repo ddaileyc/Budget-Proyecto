@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmBudgetMain.cs">
+    <Compile Include="Interfaz\frmBudgetMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBudgetMain.Designer.cs">
+    <Compile Include="Interfaz\frmBudgetMain.Designer.cs">
       <DependentUpon>frmBudgetMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmBudgetMain.resx">
+    <EmbeddedResource Include="Interfaz\frmBudgetMain.resx">
       <DependentUpon>frmBudgetMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -192,6 +192,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1496307046_file-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Conexion\CONEXION INSTRUCCIONES.txt" />
+    <Content Include="Control\CONTROL INSTRUCCIONES.txt" />
+    <Content Include="Interfaz\INTERFAZ INSTRUCCIONES.txt" />
+    <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

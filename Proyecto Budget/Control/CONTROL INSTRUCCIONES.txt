@@ -1,0 +1,1 @@
+﻿Este Folder solo ha de contener los archivos que permitan a la capa de interfaz interactuar con la conexion a la base de datos:

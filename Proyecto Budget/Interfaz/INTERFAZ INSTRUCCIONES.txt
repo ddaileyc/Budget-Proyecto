@@ -1,0 +1,4 @@
+﻿Este Folder solo ha de contener los archivos que definen las interfaces de los formularios ademas de todo el codigo necesario
+para que estos generen eventos y se comuniquen con la capa de acceso/control:
+	
+		- frmBudgetMain.cs (Formulario principals).

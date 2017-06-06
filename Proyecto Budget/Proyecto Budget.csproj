@@ -51,10 +51,19 @@
     <Compile Include="Interfaz\frmBudgetMain.Designer.cs">
       <DependentUpon>frmBudgetMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\frmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaz\frmBudgetMain.resx">
       <DependentUpon>frmBudgetMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -197,6 +206,14 @@
     <Content Include="Conexion\CONEXION INSTRUCCIONES.txt" />
     <Content Include="Control\CONTROL INSTRUCCIONES.txt" />
     <Content Include="Interfaz\INTERFAZ INSTRUCCIONES.txt" />
+    <None Include="Resources\1496729902_circle-edit-line.png" />
+    <None Include="Resources\1496729900_circle-edit-line.png" />
+    <None Include="Resources\1496729761_flat-style-circle-delete-trash.png" />
+    <None Include="Resources\1496729759_flat-style-circle-delete-trash.png" />
+    <None Include="Resources\1496729731_flat-style-circle-add.png" />
+    <None Include="Resources\1496729729_flat-style-circle-add.png" />
+    <None Include="Resources\1496728742_truck.png" />
+    <None Include="Resources\1496728739_truck.png" />
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

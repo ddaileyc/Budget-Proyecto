@@ -139,20 +139,26 @@
   <data name="1496303887_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303887_calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496303883_f08b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496303883_f08b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496305349_shopping-basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496305349_shopping-basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496305374_f00d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496305374_f00d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496305377_f00c" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496305377_f00c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1496307045_file-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496307045_file-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1496303843_f02a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303843_f02a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1496728742_truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496728742_truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1496303816_f080" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303816_f080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1496305379_f00c" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496305379_f00c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496303785_warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303785_warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,29 +172,41 @@
   <data name="1496303840_f02a" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303840_f02a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496305349_shopping-basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496305349_shopping-basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496303858_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496303858_money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496305374_f00d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496305374_f00d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496305379_f00c" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496305379_f00c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496305342_bar-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496305342_bar-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1496307046_file-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496307046_file-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1496303910_f085" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303910_f085.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496303858_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496303858_money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496303883_f08b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496303883_f08b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496305345_bar-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496305345_bar-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1496728739_truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496728739_truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1496305348_shopping-basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496305348_shopping-basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1496307037_line-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496307037_line-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1496303796_warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303796_warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496307039_line-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496307039_line-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496305352_exclamation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496305352_exclamation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,16 +238,22 @@
   <data name="1496303881_f08b" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303881_f08b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496307037_line-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496307037_line-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496729729_flat-style-circle-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729729_flat-style-circle-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496307039_line-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496307039_line-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496729731_flat-style-circle-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729731_flat-style-circle-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496307045_file-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496307045_file-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496729759_flat-style-circle-delete-trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729759_flat-style-circle-delete-trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496307046_file-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496307046_file-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496729761_flat-style-circle-delete-trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729761_flat-style-circle-delete-trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496729900_circle-edit-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729900_circle-edit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496729902_circle-edit-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729902_circle-edit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -439,5 +439,85 @@ namespace Proyecto_Budget.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496728739_truck {
+            get {
+                object obj = ResourceManager.GetObject("1496728739_truck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496728742_truck {
+            get {
+                object obj = ResourceManager.GetObject("1496728742_truck", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496729729_flat_style_circle_add {
+            get {
+                object obj = ResourceManager.GetObject("1496729729_flat-style-circle-add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496729731_flat_style_circle_add {
+            get {
+                object obj = ResourceManager.GetObject("1496729731_flat-style-circle-add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496729759_flat_style_circle_delete_trash {
+            get {
+                object obj = ResourceManager.GetObject("1496729759_flat-style-circle-delete-trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496729761_flat_style_circle_delete_trash {
+            get {
+                object obj = ResourceManager.GetObject("1496729761_flat-style-circle-delete-trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496729900_circle_edit_line {
+            get {
+                object obj = ResourceManager.GetObject("1496729900_circle-edit-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1496729902_circle_edit_line {
+            get {
+                object obj = ResourceManager.GetObject("1496729902_circle-edit-line", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

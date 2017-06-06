@@ -4,4 +4,5 @@ el icon set de Font Awesome para lograr una homogeneidad de las interfaces, cual
 Todos los iconos a usar deben descargarse en tamano 64x64 o 128x128 o sus equivalentes e importarse en este folder.
 
 - Font Awesome Icon Set: https://www.iconfinder.com/iconsets/font-awesome
+- https://www.iconfinder.com/iconsets/flat-circle-content
 

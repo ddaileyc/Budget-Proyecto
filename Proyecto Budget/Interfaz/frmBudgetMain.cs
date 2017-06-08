@@ -16,6 +16,7 @@ namespace Proyecto_Budget
         public frmPrincipal()
         {
             InitializeComponent();
+            this.Hide();
         }
 
         private void btnAdmon_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace Proyecto_Budget
                 case "Proveedores":
                     frmProveedores proveedores = new frmProveedores();
                     proveedores.MdiParent = this;
-                    proveedores.Dock = DockStyle.Fill;
+                    proveedores.Dock = DockStyle.Left;
                     proveedores.Show();
                     break;
                 //case "Productos":
@@ -58,6 +59,8 @@ namespace Proyecto_Budget
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            frmLogin login = new frmLogin();
+            login.Show();
             this.Close();
         }
     }

@@ -179,6 +179,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "BUDGET - Sistema de Control de Presupuestos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlToolbar.ResumeLayout(false);
             this.ResumeLayout(false);
 

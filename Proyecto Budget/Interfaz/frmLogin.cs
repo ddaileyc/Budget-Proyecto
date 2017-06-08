@@ -27,9 +27,10 @@ namespace Proyecto_Budget.Interfaz
 
         private void label3_Click(object sender, EventArgs e)
         {
+            //Cierra la aplicacion por completo
             this.Close();
         }
-
+        //Metodos esteticos de form
         private void label3_MouseHover(object sender, EventArgs e)
         {
             this.lblSalir.ForeColor = Color.Red;

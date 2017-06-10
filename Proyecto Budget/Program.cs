@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Budget.Interfaz;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Proyecto_Budget
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new frmLogin());
         }
     }
 }

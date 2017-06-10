@@ -30,7 +30,7 @@ namespace Proyecto_Budget
                 case "Proveedores":
                     frmProveedores proveedores = new frmProveedores();
                     proveedores.MdiParent = this;
-                    proveedores.Dock = DockStyle.Fill;
+                    proveedores.Dock = DockStyle.Left;
                     proveedores.Show();
                     break;
                 //case "Productos":
@@ -43,11 +43,12 @@ namespace Proyecto_Budget
                 //    servicios.MdiParent = this;
                 //    servicios.Show();
                 //    break;
-                //case "Usuarios":
-                //    frmUsuarios usuarios = new frmUsuarios();
-                //    usuarios.MdiParent = this;
-                //    usuarios.Show();
-                //    break;
+                case "Usuarios":
+                   frmUsuarios usuarios = new frmUsuarios();
+                    usuarios.MdiParent = this;
+                    usuarios.Dock = DockStyle.Left;
+                    usuarios.Show();
+                    break;
                 //case "Presupuestos":
                 //    frmPresupuestos presupuestos = new frmPresupuestos();
                 //    presupuestos.MdiParent = this;
@@ -58,6 +59,8 @@ namespace Proyecto_Budget
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            frmLogin login = new frmLogin();
+            login.Show();
             this.Close();
         }
     }

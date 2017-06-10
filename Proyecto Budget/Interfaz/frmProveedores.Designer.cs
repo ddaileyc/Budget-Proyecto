@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnEliminarProveedor = new System.Windows.Forms.Button();
-            this.btnEditarProveedor = new System.Windows.Forms.Button();
+            this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,38 +38,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnBuscarProveedor = new System.Windows.Forms.Button();
+            this.btnEditarProveedor = new System.Windows.Forms.Button();
+            this.btnEliminarProveedor = new System.Windows.Forms.Button();
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvProveedor
             // 
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 151);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(835, 263);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // btnEliminarProveedor
-            // 
-            this.btnEliminarProveedor.Image = global::Proyecto_Budget.Properties.Resources._1496729761_flat_style_circle_delete_trash;
-            this.btnEliminarProveedor.Location = new System.Drawing.Point(621, 30);
-            this.btnEliminarProveedor.Name = "btnEliminarProveedor";
-            this.btnEliminarProveedor.Size = new System.Drawing.Size(110, 100);
-            this.btnEliminarProveedor.TabIndex = 3;
-            this.btnEliminarProveedor.UseVisualStyleBackColor = true;
-            // 
-            // btnEditarProveedor
-            // 
-            this.btnEditarProveedor.Image = global::Proyecto_Budget.Properties.Resources._1496729902_circle_edit_line;
-            this.btnEditarProveedor.Location = new System.Drawing.Point(737, 30);
-            this.btnEditarProveedor.Name = "btnEditarProveedor";
-            this.btnEditarProveedor.Size = new System.Drawing.Size(110, 100);
-            this.btnEditarProveedor.TabIndex = 4;
-            this.btnEditarProveedor.UseVisualStyleBackColor = true;
+            this.dgvProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedor.Location = new System.Drawing.Point(12, 151);
+            this.dgvProveedor.Name = "dgvProveedor";
+            this.dgvProveedor.Size = new System.Drawing.Size(951, 263);
+            this.dgvProveedor.TabIndex = 0;
             // 
             // label1
             // 
@@ -137,6 +120,33 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Direccion:";
             // 
+            // btnBuscarProveedor
+            // 
+            this.btnBuscarProveedor.Image = global::Proyecto_Budget.Properties.Resources._1497137621_circle_edit_search_thin;
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(621, 30);
+            this.btnBuscarProveedor.Name = "btnBuscarProveedor";
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(110, 100);
+            this.btnBuscarProveedor.TabIndex = 19;
+            this.btnBuscarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarProveedor
+            // 
+            this.btnEditarProveedor.Image = global::Proyecto_Budget.Properties.Resources._1496729902_circle_edit_line;
+            this.btnEditarProveedor.Location = new System.Drawing.Point(737, 30);
+            this.btnEditarProveedor.Name = "btnEditarProveedor";
+            this.btnEditarProveedor.Size = new System.Drawing.Size(110, 100);
+            this.btnEditarProveedor.TabIndex = 4;
+            this.btnEditarProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarProveedor
+            // 
+            this.btnEliminarProveedor.Image = global::Proyecto_Budget.Properties.Resources._1496729761_flat_style_circle_delete_trash;
+            this.btnEliminarProveedor.Location = new System.Drawing.Point(853, 30);
+            this.btnEliminarProveedor.Name = "btnEliminarProveedor";
+            this.btnEliminarProveedor.Size = new System.Drawing.Size(110, 100);
+            this.btnEliminarProveedor.TabIndex = 3;
+            this.btnEliminarProveedor.UseVisualStyleBackColor = true;
+            // 
             // btnAgregarProveedor
             // 
             this.btnAgregarProveedor.Image = global::Proyecto_Budget.Properties.Resources._1496729731_flat_style_circle_add;
@@ -152,7 +162,8 @@
             this.pictureBox1.Image = global::Proyecto_Budget.Properties.Resources._1496728742_truck;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 133);
+            this.pictureBox1.Size = new System.Drawing.Size(146, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -161,7 +172,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(859, 426);
+            this.ClientSize = new System.Drawing.Size(975, 426);
+            this.Controls.Add(this.btnBuscarProveedor);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -174,13 +186,13 @@
             this.Controls.Add(this.btnEliminarProveedor);
             this.Controls.Add(this.btnAgregarProveedor);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProveedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProveedores";
             this.Text = "Administracion de Proveedores";
             this.Load += new System.EventHandler(this.frmProveedores_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,7 +201,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProveedor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnAgregarProveedor;
         private System.Windows.Forms.Button btnEliminarProveedor;
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnBuscarProveedor;
     }
 }

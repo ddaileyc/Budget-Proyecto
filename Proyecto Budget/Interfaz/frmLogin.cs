@@ -21,14 +21,23 @@ namespace Proyecto_Budget.Interfaz
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //Codigo de prueba para mostrar el flow, despues hay que mostrar el form de acuerdo con el rol del usuario
-            principal.Show();
-            this.Hide();
+            if(txtUsuario.Text.ToString() == "" || txtPassword.Text.ToString() == "")
+            {
+                string mensajeAlerta = "Por favor digite un usuario y contrasena validos";
+                string tituloAlerta = "Usuario o contrasena invalidos";
+                MessageBox.Show(mensajeAlerta, tituloAlerta, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }   
+            else
+            {
+                principal.Show();
+                this.Hide();
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
             //Cierra la aplicacion por completo
-            this.Close();
+            Application.Exit();
         }
         //Metodos esteticos de form
         private void label3_MouseHover(object sender, EventArgs e)

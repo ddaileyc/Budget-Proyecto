@@ -16,7 +16,6 @@ namespace Proyecto_Budget
         public frmPrincipal()
         {
             InitializeComponent();
-            this.Hide();
         }
 
         private void btnAdmon_Click(object sender, EventArgs e)
@@ -44,11 +43,12 @@ namespace Proyecto_Budget
                 //    servicios.MdiParent = this;
                 //    servicios.Show();
                 //    break;
-                //case "Usuarios":
-                //    frmUsuarios usuarios = new frmUsuarios();
-                //    usuarios.MdiParent = this;
-                //    usuarios.Show();
-                //    break;
+                case "Usuarios":
+                   frmUsuarios usuarios = new frmUsuarios();
+                    usuarios.MdiParent = this;
+                    usuarios.Dock = DockStyle.Left;
+                    usuarios.Show();
+                    break;
                 //case "Presupuestos":
                 //    frmPresupuestos presupuestos = new frmPresupuestos();
                 //    presupuestos.MdiParent = this;

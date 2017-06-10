@@ -42,6 +42,7 @@
             // 
             // pnlToolbar
             // 
+            this.pnlToolbar.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.pnlToolbar.Controls.Add(this.btnLogout);
             this.pnlToolbar.Controls.Add(this.btnReportes);
             this.pnlToolbar.Controls.Add(this.btnConta);
@@ -56,6 +57,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -67,7 +69,7 @@
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Salir";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnReportes
@@ -152,8 +154,11 @@
             // 
             // cbAdmon
             // 
+            this.cbAdmon.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbAdmon.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbAdmon.DisplayMember = "Usuarios";
             this.cbAdmon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbAdmon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbAdmon.FormattingEnabled = true;
             this.cbAdmon.Items.AddRange(new object[] {
             "Usuarios",
@@ -175,6 +180,7 @@
             this.ClientSize = new System.Drawing.Size(1176, 643);
             this.Controls.Add(this.cbAdmon);
             this.Controls.Add(this.pnlToolbar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";

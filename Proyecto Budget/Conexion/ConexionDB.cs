@@ -10,7 +10,7 @@ namespace Proyecto_Budget.Conexion
     {
 
 
-        // public static string conexion = "Data Source=(local); Initial Catalog=Programacion4; Integrated Security=true";
+       
 
         public static string conexion = "Server=tcp:progra4.database.windows.net,1433;Database=Progra4;User ID=progra4;Password=progra.4 ;Encrypt=True";
 

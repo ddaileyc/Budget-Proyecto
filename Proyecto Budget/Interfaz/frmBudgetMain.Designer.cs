@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pnlToolbar = new System.Windows.Forms.Panel();
+            this.cbAdmon = new System.Windows.Forms.ComboBox();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.btnConta = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnPresup = new System.Windows.Forms.Button();
             this.btnAdmon = new System.Windows.Forms.Button();
-            this.cbAdmon = new System.Windows.Forms.ComboBox();
             this.pnlToolbar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,26 @@
             this.pnlToolbar.Name = "pnlToolbar";
             this.pnlToolbar.Size = new System.Drawing.Size(1176, 90);
             this.pnlToolbar.TabIndex = 0;
+            // 
+            // cbAdmon
+            // 
+            this.cbAdmon.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbAdmon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbAdmon.DisplayMember = "Usuarios";
+            this.cbAdmon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cbAdmon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbAdmon.FormattingEnabled = true;
+            this.cbAdmon.Items.AddRange(new object[] {
+            "Usuarios",
+            "Productos",
+            "Servicios",
+            "Presupuestos",
+            "Proveedores"});
+            this.cbAdmon.Location = new System.Drawing.Point(0, 90);
+            this.cbAdmon.Name = "cbAdmon";
+            this.cbAdmon.Size = new System.Drawing.Size(131, 21);
+            this.cbAdmon.TabIndex = 4;
+            this.cbAdmon.ValueMember = "Usuarios";
             // 
             // btnLogout
             // 
@@ -152,26 +172,6 @@
             this.btnAdmon.UseVisualStyleBackColor = true;
             this.btnAdmon.Click += new System.EventHandler(this.btnAdmon_Click);
             // 
-            // cbAdmon
-            // 
-            this.cbAdmon.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbAdmon.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbAdmon.DisplayMember = "Usuarios";
-            this.cbAdmon.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cbAdmon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbAdmon.FormattingEnabled = true;
-            this.cbAdmon.Items.AddRange(new object[] {
-            "Usuarios",
-            "Productos",
-            "Servicios",
-            "Presupuestos",
-            "Proveedores"});
-            this.cbAdmon.Location = new System.Drawing.Point(0, 90);
-            this.cbAdmon.Name = "cbAdmon";
-            this.cbAdmon.Size = new System.Drawing.Size(131, 21);
-            this.cbAdmon.TabIndex = 4;
-            this.cbAdmon.ValueMember = "Usuarios";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +186,7 @@
             this.Name = "frmPrincipal";
             this.Text = "BUDGET - Sistema de Control de Presupuestos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.pnlToolbar.ResumeLayout(false);
             this.ResumeLayout(false);
 

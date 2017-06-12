@@ -1,3 +1,4 @@
 ﻿Este Folder solo ha de contener los siguientes archivos:
 	
 		- Conexion.cs (Archivo de conexion de base de datos).
+		- Test Charlie 6

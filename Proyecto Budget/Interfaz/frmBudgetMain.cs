@@ -33,11 +33,11 @@ namespace Proyecto_Budget
                     proveedores.Dock = DockStyle.Left;
                     proveedores.Show();
                     break;
-                //case "Productos":
-                //    frmProductos productos = new frmProductos();
-                //    productos.MdiParent = this;
-                //    productos.Show();
-                //    break;
+                case "Productos":
+                    FrmProductos productos = new FrmProductos();
+                    productos.MdiParent = this;
+                    productos.Show();
+                    break;
                 //case "Servicios":
                 //    frmServicios servicios = new frmServicios();
                 //    servicios.MdiParent = this;
@@ -62,6 +62,11 @@ namespace Proyecto_Budget
             frmLogin login = new frmLogin();
             login.Show();
             this.Close();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

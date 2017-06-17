@@ -67,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionDB.cs" />
+    <Compile Include="Control\User controller.cs" />
+    <Compile Include="Control\User.cs" />
     <Compile Include="Interfaz\frmBudgetMain.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -125,6 +125,7 @@
             this.btnAgregarProducto.Size = new System.Drawing.Size(110, 100);
             this.btnAgregarProducto.TabIndex = 23;
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // TxtProveedor
             // 

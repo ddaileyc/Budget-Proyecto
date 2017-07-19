@@ -19,7 +19,12 @@ namespace Proyecto_Budget.Interfaz
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = Control.CRUD.MostrarProducto();
+            this.dataGridView1.DataSource = Control.CRUD_Producto.MostrarProducto();
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

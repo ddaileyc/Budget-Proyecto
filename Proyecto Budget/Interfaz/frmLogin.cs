@@ -20,17 +20,15 @@ namespace Proyecto_Budget.Interfaz
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //Codigo de prueba para mostrar el flow, despues hay que mostrar el form de acuerdo con el rol del usuario
-            if(txtUsuario.Text.ToString() == "" || txtPassword.Text.ToString() == "")
-            {
-                string mensajeAlerta = "Por favor digite un usuario y contrasena validos";
-                string tituloAlerta = "Usuario o contrasena invalidos";
-                MessageBox.Show(mensajeAlerta, tituloAlerta, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }   
-            else
+            Control.CRUD_Usuario validacion = new Control.CRUD_Usuario();
+            if (validacion.ValidarUsuario(txtUsuario.Text, txtPassword.Text))
             {
                 principal.Show();
                 this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Por favor digite un usuario y contraseña validos", "Usuario o contraseña invalidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

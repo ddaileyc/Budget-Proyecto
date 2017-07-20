@@ -95,7 +95,7 @@
             this.lblOlvidoContrasena.Name = "lblOlvidoContrasena";
             this.lblOlvidoContrasena.Size = new System.Drawing.Size(113, 13);
             this.lblOlvidoContrasena.TabIndex = 5;
-            this.lblOlvidoContrasena.Text = "Olvido su contrasena?";
+            this.lblOlvidoContrasena.Text = "Olvido su contraseña?";
             this.lblOlvidoContrasena.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
             this.lblOlvidoContrasena.MouseHover += new System.EventHandler(this.label2_MouseHover);
             // 

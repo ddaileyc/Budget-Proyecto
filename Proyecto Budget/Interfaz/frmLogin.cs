@@ -12,7 +12,7 @@ namespace Proyecto_Budget.Interfaz
 {
     public partial class frmLogin : Form
     {
-        frmPrincipal principal = new frmPrincipal();
+        frmPrincipalAdmin principal = new frmPrincipalAdmin();
         public frmLogin()
         {
             InitializeComponent();

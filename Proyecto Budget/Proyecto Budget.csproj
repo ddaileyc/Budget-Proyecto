@@ -67,12 +67,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionDB.cs" />
+    <Compile Include="Control\CRUD_Proveedor.cs" />
     <Compile Include="Control\CRUD_Producto.cs" />
-    <Compile Include="Interfaz\frmBudgetMain.cs">
+    <Compile Include="Interfaz\frmBudgetAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\frmBudgetMain.Designer.cs">
-      <DependentUpon>frmBudgetMain.cs</DependentUpon>
+    <Compile Include="Interfaz\frmBudgetAdmin.Designer.cs">
+      <DependentUpon>frmBudgetAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\frmLogin.cs">
       <SubType>Form</SubType>
@@ -100,8 +101,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Interfaz\frmBudgetMain.resx">
-      <DependentUpon>frmBudgetMain.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\frmBudgetAdmin.resx">
+      <DependentUpon>frmBudgetAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -272,6 +273,8 @@
     <None Include="Resources\1496953156_f007.png" />
     <None Include="Resources\1496953164_f09c.png" />
     <None Include="Resources\1497137621_circle-edit-search-thin.png" />
+    <None Include="Resources\if_f155_213240 %281%29.png" />
+    <None Include="Resources\if_f155_213240.png" />
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCedula = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.btnEditarProveedor = new System.Windows.Forms.Button();
@@ -53,8 +53,10 @@
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedor.Location = new System.Drawing.Point(12, 151);
             this.dgvProveedor.Name = "dgvProveedor";
+            this.dgvProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedor.Size = new System.Drawing.Size(951, 263);
             this.dgvProveedor.TabIndex = 0;
+            this.dgvProveedor.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellEnter);
             // 
             // label1
             // 
@@ -65,19 +67,19 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Nombre:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(225, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtNombre.Location = new System.Drawing.Point(225, 30);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(253, 20);
+            this.txtNombre.TabIndex = 7;
             // 
-            // textBox2
+            // txtCedula
             // 
-            this.textBox2.Location = new System.Drawing.Point(225, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtCedula.Location = new System.Drawing.Point(225, 56);
+            this.txtCedula.Name = "txtCedula";
+            this.txtCedula.Size = new System.Drawing.Size(253, 20);
+            this.txtCedula.TabIndex = 9;
             // 
             // label2
             // 
@@ -88,12 +90,12 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Cedula:";
             // 
-            // textBox3
+            // txtTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(225, 82);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(253, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtTelefono.Location = new System.Drawing.Point(225, 82);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(253, 20);
+            this.txtTelefono.TabIndex = 11;
             // 
             // label3
             // 
@@ -104,12 +106,12 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Telefono:";
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(225, 108);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(253, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtDireccion.Location = new System.Drawing.Point(225, 108);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(253, 20);
+            this.txtDireccion.TabIndex = 13;
             // 
             // label4
             // 
@@ -174,13 +176,13 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(975, 426);
             this.Controls.Add(this.btnBuscarProveedor);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditarProveedor);
             this.Controls.Add(this.btnEliminarProveedor);
@@ -207,12 +209,12 @@
         private System.Windows.Forms.Button btnEliminarProveedor;
         private System.Windows.Forms.Button btnEditarProveedor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscarProveedor;
     }

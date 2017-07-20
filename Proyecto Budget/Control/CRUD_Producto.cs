@@ -10,12 +10,12 @@ namespace Proyecto_Budget.Control
 {
     class CRUD_Producto
     {
-        public static Conexion.ConexionDB controlDB = new Conexion.ConexionDB();
+        public static Conexion.ConexionDB controlDBProducto = new Conexion.ConexionDB();
 
-        public DataTable MostrarProductos()
+        public static DataTable MostrarProductos()
         {
-            DataTable DtProductos = new DataTable("Producto");
-            controlDB.MostrarProductos(DtProductos);
+            DataTable DtProductos = new DataTable("Productos");
+            controlDBProducto.MostrarProductos(DtProductos);
             return DtProductos;
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +48,10 @@
             this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnBuscarUser = new System.Windows.Forms.Button();
+            this.ttModificar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttAgregar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttBuscar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttEliminar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -179,6 +184,7 @@
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(110, 100);
             this.btnEditarUsuario.TabIndex = 18;
+            this.ttModificar.SetToolTip(this.btnEditarUsuario, "Modificar usuario seleccionado");
             this.btnEditarUsuario.UseVisualStyleBackColor = true;
             // 
             // btnEliminarUsuario
@@ -188,6 +194,7 @@
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(110, 100);
             this.btnEliminarUsuario.TabIndex = 17;
+            this.ttEliminar.SetToolTip(this.btnEliminarUsuario, "Eliminar usuario");
             this.btnEliminarUsuario.UseVisualStyleBackColor = true;
             // 
             // btnAgregarUsuario
@@ -197,6 +204,7 @@
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(110, 100);
             this.btnAgregarUsuario.TabIndex = 16;
+            this.ttAgregar.SetToolTip(this.btnAgregarUsuario, "Agregar nuevo usuario");
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -218,7 +226,24 @@
             this.btnBuscarUser.Name = "btnBuscarUser";
             this.btnBuscarUser.Size = new System.Drawing.Size(110, 100);
             this.btnBuscarUser.TabIndex = 32;
+            this.ttBuscar.SetToolTip(this.btnBuscarUser, "Buscar usuario existente");
             this.btnBuscarUser.UseVisualStyleBackColor = true;
+            // 
+            // ttModificar
+            // 
+            this.ttModificar.IsBalloon = true;
+            // 
+            // ttAgregar
+            // 
+            this.ttAgregar.IsBalloon = true;
+            // 
+            // ttBuscar
+            // 
+            this.ttBuscar.IsBalloon = true;
+            // 
+            // ttEliminar
+            // 
+            this.ttEliminar.IsBalloon = true;
             // 
             // frmUsuarios
             // 
@@ -246,7 +271,7 @@
             this.Controls.Add(this.dgvUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmUsuarios";
-            this.Text = "Administracion de usuarios de sistema";
+            this.Text = "Administración de Usuarios de Sistema";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -274,5 +299,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBuscarUsuario;
         private System.Windows.Forms.Button btnBuscarUser;
+        private System.Windows.Forms.ToolTip ttModificar;
+        private System.Windows.Forms.ToolTip ttEliminar;
+        private System.Windows.Forms.ToolTip ttAgregar;
+        private System.Windows.Forms.ToolTip ttBuscar;
     }
 }

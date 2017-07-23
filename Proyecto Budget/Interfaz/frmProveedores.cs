@@ -19,7 +19,8 @@ namespace Proyecto_Budget.Interfaz
 
         private void frmProveedores_Load(object sender, EventArgs e)
         {
-            this.dgvProveedor.DataSource = Control.CRUD_Proveedor.MostrarProveedores();
+            Control.CRUD_Proveedor proveedor = new Control.CRUD_Proveedor();
+            dgvProveedor.DataSource = proveedor.MostrarProveedores();
 
         }
 
@@ -30,5 +31,37 @@ namespace Proyecto_Budget.Interfaz
             txtTelefono.Text = dgvProveedor.CurrentRow.Cells[3].Value.ToString();
             txtDireccion.Text = dgvProveedor.CurrentRow.Cells[4].Value.ToString();
         }
+
+        private void btnAgregarProveedor_Click(object sender, EventArgs e)
+        {
+            Control.CRUD_Proveedor proveedor = new Control.CRUD_Proveedor();
+            proveedor.nombre = txtNombre.Text;
+            proveedor.cedula = int.Parse(txtCedula.Text);
+            proveedor.direccion = txtDireccion.Text;
+            proveedor.telefono = int.Parse(txtTelefono.Text);
+            proveedor.insertarProveedor(proveedor);
+            proveedor.MostrarProveedores();
+        }
+
+        private void btnEliminarProveedor_Click(object sender, EventArgs e)
+        {
+            Control.CRUD_Proveedor proveedor = new Control.CRUD_Proveedor();
+            proveedor.id = int.Parse(dgvProveedor.CurrentRow.Cells[0].Value.ToString());
+            proveedor.eliminarProveedor(proveedor.id);
+            proveedor.MostrarProveedores();
+        }
+
+        private void btnEditarProveedor_Click(object sender, EventArgs e)
+        {
+            Control.CRUD_Proveedor proveedor = new Control.CRUD_Proveedor();
+            proveedor.nombre = txtNombre.Text;
+            proveedor.cedula = int.Parse(txtCedula.Text);
+            proveedor.direccion = txtDireccion.Text;
+            proveedor.telefono = int.Parse(txtTelefono.Text);
+            proveedor.id = int.Parse(dgvProveedor.CurrentRow.Cells[0].Value.ToString());
+            proveedor.modificarProveedor(proveedor);
+            proveedor.MostrarProveedores();
+        }
     }
+
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +44,10 @@
             this.btnEliminarProveedor = new System.Windows.Forms.Button();
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ttModificar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttAgregar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttBuscar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttEliminar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -129,6 +134,7 @@
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(110, 100);
             this.btnBuscarProveedor.TabIndex = 19;
+            this.ttBuscar.SetToolTip(this.btnBuscarProveedor, "Buscar proveedor existente");
             this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             // 
             // btnEditarProveedor
@@ -138,7 +144,9 @@
             this.btnEditarProveedor.Name = "btnEditarProveedor";
             this.btnEditarProveedor.Size = new System.Drawing.Size(110, 100);
             this.btnEditarProveedor.TabIndex = 4;
+            this.ttModificar.SetToolTip(this.btnEditarProveedor, "Modificar proveedor seleccionado");
             this.btnEditarProveedor.UseVisualStyleBackColor = true;
+            this.btnEditarProveedor.Click += new System.EventHandler(this.btnEditarProveedor_Click);
             // 
             // btnEliminarProveedor
             // 
@@ -147,7 +155,9 @@
             this.btnEliminarProveedor.Name = "btnEliminarProveedor";
             this.btnEliminarProveedor.Size = new System.Drawing.Size(110, 100);
             this.btnEliminarProveedor.TabIndex = 3;
+            this.ttEliminar.SetToolTip(this.btnEliminarProveedor, "Eliminar proveedor");
             this.btnEliminarProveedor.UseVisualStyleBackColor = true;
+            this.btnEliminarProveedor.Click += new System.EventHandler(this.btnEliminarProveedor_Click);
             // 
             // btnAgregarProveedor
             // 
@@ -156,7 +166,9 @@
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
             this.btnAgregarProveedor.Size = new System.Drawing.Size(110, 100);
             this.btnAgregarProveedor.TabIndex = 2;
+            this.ttAgregar.SetToolTip(this.btnAgregarProveedor, "Agregar nuevo proveedor");
             this.btnAgregarProveedor.UseVisualStyleBackColor = true;
+            this.btnAgregarProveedor.Click += new System.EventHandler(this.btnAgregarProveedor_Click);
             // 
             // pictureBox1
             // 
@@ -168,6 +180,22 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // ttModificar
+            // 
+            this.ttModificar.IsBalloon = true;
+            // 
+            // ttAgregar
+            // 
+            this.ttAgregar.IsBalloon = true;
+            // 
+            // ttBuscar
+            // 
+            this.ttBuscar.IsBalloon = true;
+            // 
+            // ttEliminar
+            // 
+            this.ttEliminar.IsBalloon = true;
             // 
             // frmProveedores
             // 
@@ -217,5 +245,9 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnBuscarProveedor;
+        private System.Windows.Forms.ToolTip ttBuscar;
+        private System.Windows.Forms.ToolTip ttModificar;
+        private System.Windows.Forms.ToolTip ttEliminar;
+        private System.Windows.Forms.ToolTip ttAgregar;
     }
 }

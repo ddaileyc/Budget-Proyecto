@@ -11,6 +11,14 @@ namespace Proyecto_Budget.Control
     class CRUD_Usuario
     {
         public static Conexion.ConexionDB controlDBUsuario = new Conexion.ConexionDB();
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public int cedula { get; set; }
+        public int departamento { get; set; }
+        public int puesto { get; set; }
+        public string id_sistema { get; set; }
+        public string contrasena { get; set; }
 
         public Boolean ValidarUsuario(string usuario, string contrasena)
         {

@@ -28,7 +28,7 @@ namespace Proyecto_Budget.Interfaz
             }
             else
             {
-                MessageBox.Show("Por favor digite un usuario y contraseña validos", "Usuario o contraseña invalidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor digite un usuario y contraseña válidos", "Usuario o contraseña inválidos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

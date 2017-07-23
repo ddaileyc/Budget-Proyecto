@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProductos));
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,6 +46,10 @@
             this.btnEditarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.ttModificar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttAgregar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttBuscar = new System.Windows.Forms.ToolTip(this.components);
+            this.ttEliminar = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -158,7 +163,9 @@
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(110, 100);
             this.btnBuscarProducto.TabIndex = 36;
+            this.ttBuscar.SetToolTip(this.btnBuscarProducto, "Buscar producto existente");
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // btnEditarProducto
             // 
@@ -167,7 +174,9 @@
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Size = new System.Drawing.Size(110, 100);
             this.btnEditarProducto.TabIndex = 35;
+            this.ttModificar.SetToolTip(this.btnEditarProducto, "Modificar producto seleccionado");
             this.btnEditarProducto.UseVisualStyleBackColor = true;
+            this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
             // 
             // btnEliminarProducto
             // 
@@ -176,7 +185,9 @@
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(110, 100);
             this.btnEliminarProducto.TabIndex = 34;
+            this.ttEliminar.SetToolTip(this.btnEliminarProducto, "Eliminar producto");
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
             // btnAgregarProducto
             // 
@@ -185,7 +196,25 @@
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(110, 100);
             this.btnAgregarProducto.TabIndex = 33;
+            this.ttAgregar.SetToolTip(this.btnAgregarProducto, "Agregar nuevo producto");
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click_1);
+            // 
+            // ttModificar
+            // 
+            this.ttModificar.IsBalloon = true;
+            // 
+            // ttAgregar
+            // 
+            this.ttAgregar.IsBalloon = true;
+            // 
+            // ttBuscar
+            // 
+            this.ttBuscar.IsBalloon = true;
+            // 
+            // ttEliminar
+            // 
+            this.ttEliminar.IsBalloon = true;
             // 
             // FrmProductos
             // 
@@ -239,5 +268,9 @@
         private System.Windows.Forms.Button btnEditarProducto;
         private System.Windows.Forms.Button btnEliminarProducto;
         private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.ToolTip ttModificar;
+        private System.Windows.Forms.ToolTip ttAgregar;
+        private System.Windows.Forms.ToolTip ttBuscar;
+        private System.Windows.Forms.ToolTip ttEliminar;
     }
 }

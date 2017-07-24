@@ -21,6 +21,7 @@ namespace Proyecto_Budget.Interfaz
         {
             Control.CRUD_Producto producto = new Control.CRUD_Producto();
             dgvProductos.DataSource = producto.MostrarProductos();
+            dgvProductos.AutoResizeColumns();
         }
 
         private void dgvProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -41,7 +42,11 @@ namespace Proyecto_Budget.Interfaz
             producto.costo = double.Parse(TxtCosto.Text);
             producto.proveedor = int.Parse(TxtProveedor.Text);
             producto.insertarProducto(producto);
-            producto.MostrarProductos();
+            //Resetear Datagrid
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = producto.MostrarProductos();
+            dgvProductos.Refresh();
+            dgvProductos.AutoResizeColumns();
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
@@ -49,7 +54,11 @@ namespace Proyecto_Budget.Interfaz
             Control.CRUD_Producto producto = new Control.CRUD_Producto();
             producto.id = int.Parse(dgvProductos.CurrentRow.Cells[0].Value.ToString());
             producto.eliminarProducto(producto.id);
-            producto.MostrarProductos();
+            //Resetear Datagrid
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = producto.MostrarProductos();
+            dgvProductos.Refresh();
+            dgvProductos.AutoResizeColumns();
         }
 
         private void btnBuscarProducto_Click(object sender, EventArgs e)
@@ -67,7 +76,11 @@ namespace Proyecto_Budget.Interfaz
             producto.proveedor = int.Parse(TxtProveedor.Text);
             producto.id = int.Parse(dgvProductos.CurrentRow.Cells[0].Value.ToString());
             producto.modificarProducto(producto);
-            producto.MostrarProductos();
+            //Resetear Datagrid
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = producto.MostrarProductos();
+            dgvProductos.Refresh();
+            dgvProductos.AutoResizeColumns();
         }
     }
 }

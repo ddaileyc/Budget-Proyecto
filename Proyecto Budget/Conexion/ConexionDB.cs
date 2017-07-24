@@ -231,6 +231,7 @@ namespace Proyecto_Budget.Conexion
                 cmd.Parameters.AddWithValue("@Descripcion", productodb.desc);
                 cmd.Parameters.AddWithValue("@Marca", productodb.marca);
                 cmd.Parameters.AddWithValue("@Proveedor", productodb.proveedor);
+                cmd.Parameters.AddWithValue("@Costo", productodb.costo);
                 cmd.Parameters.AddWithValue("@Id", productodb.id);
                 cmd.CommandTimeout = 0;
                 SQLconexion.Open();

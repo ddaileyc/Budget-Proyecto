@@ -21,7 +21,7 @@ namespace Proyecto_Budget.Interfaz
         {
             Control.CRUD_Proveedor proveedor = new Control.CRUD_Proveedor();
             dgvProveedor.DataSource = proveedor.MostrarProveedores();
-
+            dgvProveedor.AutoResizeColumns();
         }
 
         private void dgvProveedor_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -40,7 +40,11 @@ namespace Proyecto_Budget.Interfaz
             proveedor.direccion = txtDireccion.Text;
             proveedor.telefono = int.Parse(txtTelefono.Text);
             proveedor.insertarProveedor(proveedor);
-            proveedor.MostrarProveedores();
+            //Resetear Datagrid
+            dgvProveedor.DataSource = null;
+            dgvProveedor.DataSource = proveedor.MostrarProveedores();
+            dgvProveedor.Refresh();
+            dgvProveedor.AutoResizeColumns();
         }
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
@@ -48,7 +52,11 @@ namespace Proyecto_Budget.Interfaz
             Control.CRUD_Proveedor proveedor = new Control.CRUD_Proveedor();
             proveedor.id = int.Parse(dgvProveedor.CurrentRow.Cells[0].Value.ToString());
             proveedor.eliminarProveedor(proveedor.id);
-            proveedor.MostrarProveedores();
+            //Resetear Datagrid
+            dgvProveedor.DataSource = null;
+            dgvProveedor.DataSource = proveedor.MostrarProveedores();
+            dgvProveedor.Refresh();
+            dgvProveedor.AutoResizeColumns();
         }
 
         private void btnEditarProveedor_Click(object sender, EventArgs e)
@@ -60,7 +68,11 @@ namespace Proyecto_Budget.Interfaz
             proveedor.telefono = int.Parse(txtTelefono.Text);
             proveedor.id = int.Parse(dgvProveedor.CurrentRow.Cells[0].Value.ToString());
             proveedor.modificarProveedor(proveedor);
-            proveedor.MostrarProveedores();
+            //Resetear Datagrid
+            dgvProveedor.DataSource = null;
+            dgvProveedor.DataSource = proveedor.MostrarProveedores();
+            dgvProveedor.Refresh();
+            dgvProveedor.AutoResizeColumns();
         }
     }
 

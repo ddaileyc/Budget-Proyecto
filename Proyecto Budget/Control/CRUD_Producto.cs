@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data; // para trabajar con datos de sql
 using System.Data.SqlClient; // para poder enviar comando desde visual a sql
+using System.Windows.Forms;
 
 namespace Proyecto_Budget.Control
 {
@@ -27,7 +28,14 @@ namespace Proyecto_Budget.Control
 
         public void insertarProducto(CRUD_Producto producto)
         {
-            controlDBProducto.insertarProducto(producto);
+            try
+            {
+                controlDBProducto.insertarProducto(producto);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al agregar producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void eliminarProducto(int id)

@@ -13,8 +13,7 @@ namespace Proyecto_Budget.Conexion
     {
         public static string conexion = "Server=tcp:db-budget.database.windows.net,1433;Database=Budget;User ID=budget-admin;Password=p455w0rD;Encrypt=True";
 
-
-        //Metodo de validacion de usuario para login
+        #region "Metodo validacion usuario"
         public Boolean ValidarUsuario(string usuarioDB, string contrasenaDB)
         {
             SqlConnection SQLconexion = new SqlConnection();
@@ -41,8 +40,9 @@ namespace Proyecto_Budget.Conexion
                 return false;
             }
         }
+        #endregion
 
-        //Metodos de muestra de datos
+        #region "Metodos de muestra de datos"
         public DataTable MostrarProductos(DataTable productos)
         {
             SqlConnection SQLconexion = new SqlConnection();
@@ -86,8 +86,9 @@ namespace Proyecto_Budget.Conexion
             }
             return proveedores;
         }
+        #endregion
 
-        //Metodos de insercion de datos
+        #region "Metodos de insercion de datos"
         public void insertarProducto(Control.CRUD_Producto producto)
         {
             SqlConnection SQLconexion = new SqlConnection();
@@ -116,9 +117,9 @@ namespace Proyecto_Budget.Conexion
                 }
                 SQLconexion.Close();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine(e.Message);
+                MessageBox.Show(ex.ToString(), "Error al agregar producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -154,8 +155,9 @@ namespace Proyecto_Budget.Conexion
                 Console.WriteLine(e.Message);
             }
         }
+        #endregion
 
-        //Metodos de elmiminacion de datos
+        #region "Metodos de elmiminacion de datos"
         public void eliminarProducto(int iddb)
         {
             SqlConnection SQLconexion = new SqlConnection();
@@ -215,8 +217,9 @@ namespace Proyecto_Budget.Conexion
                 Console.WriteLine(e.Message);
             }
         }
+        #endregion
 
-        //Metodos de modificacion de datos
+        #region "Metodos de modificacion de datos"
         public void modificarProducto(Control.CRUD_Producto productodb)
         {
             SqlConnection SQLconexion = new SqlConnection();
@@ -285,5 +288,6 @@ namespace Proyecto_Budget.Conexion
                 Console.WriteLine(e.Message);
             }
         }
+        #endregion
     }
 }

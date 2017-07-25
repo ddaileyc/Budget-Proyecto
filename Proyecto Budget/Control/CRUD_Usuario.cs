@@ -31,5 +31,20 @@ namespace Proyecto_Budget.Control
             controlDBUsuario.MostrarProveedores(DtUsuarios);
             return DtUsuarios;
         }
+
+        //public void insertarUsuario(CRUD_Usuario usuario)
+        //{
+        //    controlDBUsuario.insertarUsuario(usuario);
+        //}
+
+        //public void eliminarUsuario(int id)
+        //{
+        //    controlDBUsuario.eliminarUsuario(id);
+        //}
+
+        //public void modificarUsuario(Control.CRUD_Usuario usuario)
+        //{
+        //    controlDBUsuario.modificarUsuario(usuario);
+        //}
     }
 }

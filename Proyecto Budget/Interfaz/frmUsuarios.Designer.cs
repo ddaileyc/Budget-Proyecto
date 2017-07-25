@@ -165,9 +165,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(170, 146);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 30;
-            this.label6.Text = "Tipo de usuario:";
+            this.label6.Text = "Puesto:";
             // 
             // btnBuscarUsuario
             // 

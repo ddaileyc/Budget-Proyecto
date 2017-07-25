@@ -33,20 +33,28 @@ namespace Proyecto_Budget.Interfaz
             TxtProveedor.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
         }
 
-        private void btnAgregarProducto_Click_1(object sender, EventArgs e)
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            Control.CRUD_Producto producto = new Control.CRUD_Producto();
-            producto.nombre = TxtNombre.Text;
-            producto.desc = TxtDescripcion.Text;
-            producto.marca = TxtMarca.Text;
-            producto.costo = double.Parse(TxtCosto.Text);
-            producto.proveedor = int.Parse(TxtProveedor.Text);
-            producto.insertarProducto(producto);
-            //Resetear Datagrid
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = producto.MostrarProductos();
-            dgvProductos.Refresh();
-            dgvProductos.AutoResizeColumns();
+            try
+            {
+                Control.CRUD_Producto producto = new Control.CRUD_Producto();
+                producto.nombre = TxtNombre.Text;
+                producto.desc = TxtDescripcion.Text;
+                producto.marca = TxtMarca.Text;
+                producto.costo = double.Parse(TxtCosto.Text);
+                producto.proveedor = int.Parse(TxtProveedor.Text);
+                producto.insertarProducto(producto);
+                //Resetear Datagrid
+                dgvProductos.DataSource = null;
+                dgvProductos.DataSource = producto.MostrarProductos();
+                dgvProductos.Refresh();
+                dgvProductos.AutoResizeColumns();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al agregar producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
@@ -68,19 +76,27 @@ namespace Proyecto_Budget.Interfaz
 
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
-            Control.CRUD_Producto producto = new Control.CRUD_Producto();
-            producto.nombre = TxtNombre.Text;
-            producto.desc = TxtDescripcion.Text;
-            producto.marca = TxtMarca.Text;
-            producto.costo = double.Parse(TxtCosto.Text);
-            producto.proveedor = int.Parse(TxtProveedor.Text);
-            producto.id = int.Parse(dgvProductos.CurrentRow.Cells[0].Value.ToString());
-            producto.modificarProducto(producto);
-            //Resetear Datagrid
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = producto.MostrarProductos();
-            dgvProductos.Refresh();
-            dgvProductos.AutoResizeColumns();
+            try
+            {
+                Control.CRUD_Producto producto = new Control.CRUD_Producto();
+                producto.nombre = TxtNombre.Text;
+                producto.desc = TxtDescripcion.Text;
+                producto.marca = TxtMarca.Text;
+                producto.costo = double.Parse(TxtCosto.Text);
+                producto.proveedor = int.Parse(TxtProveedor.Text);
+                producto.id = int.Parse(dgvProductos.CurrentRow.Cells[0].Value.ToString());
+                producto.modificarProducto(producto);
+                //Resetear Datagrid
+                dgvProductos.DataSource = null;
+                dgvProductos.DataSource = producto.MostrarProductos();
+                dgvProductos.Refresh();
+                dgvProductos.AutoResizeColumns();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

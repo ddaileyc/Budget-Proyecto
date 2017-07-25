@@ -198,7 +198,7 @@
             this.btnAgregarProducto.TabIndex = 33;
             this.ttAgregar.SetToolTip(this.btnAgregarProducto, "Agregar nuevo producto");
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
-            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click_1);
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // ttModificar
             // 

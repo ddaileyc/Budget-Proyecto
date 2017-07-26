@@ -52,8 +52,12 @@
             this.ttAgregar = new System.Windows.Forms.ToolTip(this.components);
             this.ttBuscar = new System.Windows.Forms.ToolTip(this.components);
             this.ttEliminar = new System.Windows.Forms.ToolTip(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -140,8 +144,20 @@
             // 
             // cbDepartamentos
             // 
+            this.cbDepartamentos.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.departamentoBindingSource, "Nombre", true));
             this.cbDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbDepartamentos.FormattingEnabled = true;
+            this.cbDepartamentos.Items.AddRange(new object[] {
+            "Crédito",
+            "Tecnología",
+            "Contabilidad",
+            "Ventas",
+            "Gerencia",
+            "Tesorería",
+            "Cobros",
+            "Recursos Humanos",
+            "Mercadeo",
+            "Capacitación"});
             this.cbDepartamentos.Location = new System.Drawing.Point(253, 116);
             this.cbDepartamentos.Name = "cbDepartamentos";
             this.cbDepartamentos.Size = new System.Drawing.Size(223, 21);
@@ -154,7 +170,8 @@
             this.cbRol.Items.AddRange(new object[] {
             "Administrador",
             "Gerente",
-            "Usuario"});
+            "Jefe de departamento",
+            "Dependiente"});
             this.cbRol.Location = new System.Drawing.Point(253, 143);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(223, 21);
@@ -206,6 +223,7 @@
             this.btnAgregarUsuario.TabIndex = 16;
             this.ttAgregar.SetToolTip(this.btnAgregarUsuario, "Agregar nuevo usuario");
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
+            this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
             // pictureBox1
             // 
@@ -245,6 +263,14 @@
             // 
             this.ttEliminar.IsBalloon = true;
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(Proyecto_Budget.Modelo.Usuario);
+            // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataSource = typeof(Proyecto_Budget.Modelo.Departamento);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,8 +298,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmUsuarios";
             this.Text = "Administración de Usuarios de Sistema";
+            this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +332,7 @@
         private System.Windows.Forms.ToolTip ttEliminar;
         private System.Windows.Forms.ToolTip ttAgregar;
         private System.Windows.Forms.ToolTip ttBuscar;
+        private System.Windows.Forms.BindingSource departamentoBindingSource;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
     }
 }

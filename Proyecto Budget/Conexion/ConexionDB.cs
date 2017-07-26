@@ -14,7 +14,7 @@ namespace Proyecto_Budget.Conexion
         public static string conexion = "Server=tcp:db-budget.database.windows.net,1433;Database=Budget;User ID=budget-admin;Password=p455w0rD;Encrypt=True";
 
         #region "Metodo validacion usuario"
-        public Boolean ValidarUsuario(string usuarioDB, string contrasenaDB)
+        public bool ValidarUsuario(string usuarioDB, string contrasenaDB)
         {
             SqlConnection SQLconexion = new SqlConnection();
             try
@@ -86,6 +86,21 @@ namespace Proyecto_Budget.Conexion
             }
             return proveedores;
         }
+
+        public List<Modelo.Usuario> MostrarUsuarios(List<Modelo.Usuario> listaUsuarios)
+        {
+            try
+            {
+                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
+                listaUsuarios = budgetContext.Usuario.ToList();
+                return listaUsuarios;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error al mostrar usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
         #endregion
 
         #region "Metodos de insercion de datos"
@@ -155,6 +170,20 @@ namespace Proyecto_Budget.Conexion
                 Console.WriteLine(e.Message);
             }
         }
+
+        public void insertarUsuario(Modelo.Usuario usuario)
+        {
+            try
+            {
+                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
+                budgetContext.Usuario.Add(usuario);
+                budgetContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region "Metodos de elmiminacion de datos"
@@ -215,6 +244,29 @@ namespace Proyecto_Budget.Conexion
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+
+        public void eliminarUsuario(Modelo.Usuario usuario)
+        {
+            try
+            {
+                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
+                budgetContext.Usuario.Attach(usuario);
+                var borrar = budgetContext.Usuario.FirstOrDefault((x => x.Id == usuario.Id));
+                if (borrar != null) {
+                    budgetContext.Usuario.Remove(usuario);
+                    budgetContext.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron registros", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

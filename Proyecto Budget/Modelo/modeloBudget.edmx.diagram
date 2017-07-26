@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="329dafcde3684c218417f1e7dae18449" Name="Diagram1">
+        <EntityTypeShape EntityType="BudgetModel.Compra" Width="1.5" PointX="3.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Departamento" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Factura" Width="1.5" PointX="9" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Presupuesto" Width="1.5" PointX="11.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Producto" Width="1.5" PointX="5.375" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Proveedor" Width="1.5" PointX="0.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Rol" Width="1.5" PointX="8.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BudgetModel.Usuario" Width="1.5" PointX="5.25" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="BudgetModel.FK_Factura_Compra" ManuallyRouted="false" />
+        <AssociationConnector Association="BudgetModel.FK_Presupuesto_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="BudgetModel.FK_Usuario_Departamento" ManuallyRouted="false" />
+        <AssociationConnector Association="BudgetModel.FK_Factura_Producto" ManuallyRouted="false" />
+        <AssociationConnector Association="BudgetModel.FK_Producto_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="BudgetModel.FK_Usuario_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="BudgetModel.FK_Compra_Cliente" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

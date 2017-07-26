@@ -53,6 +53,12 @@
     <StartupObject>Proyecto_Budget.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -103,6 +109,45 @@
     <Compile Include="Interfaz\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Compra.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Departamento.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Factura.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\modeloBudget.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBudget.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\modeloBudget.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\modeloBudget.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Presupuesto.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Producto.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Proveedor.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Rol.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Usuario.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaz\frmBudgetAdmin.resx">
@@ -130,6 +175,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Modelo\modeloBudget.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>modeloBudget.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\modeloBudget.edmx.diagram">
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Compra.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Departamento.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Factura.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Presupuesto.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Producto.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Proveedor.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -279,6 +339,16 @@
     <None Include="Resources\1497137621_circle-edit-search-thin.png" />
     <None Include="Resources\if_f155_213240 %281%29.png" />
     <None Include="Resources\if_f155_213240.png" />
+    <Content Include="Modelo\modeloBudget.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+      <LastGenOutput>modeloBudget.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\modeloBudget.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+      <LastGenOutput>modeloBudget.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -296,5 +366,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

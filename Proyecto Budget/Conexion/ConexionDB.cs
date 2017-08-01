@@ -87,6 +87,50 @@ namespace Proyecto_Budget.Conexion
             return proveedores;
         }
 
+        public DataTable MostrarCompra(DataTable compra)
+        {
+            SqlConnection SQLconexion = new SqlConnection();
+            try
+            {
+                SQLconexion.ConnectionString = ConexionDB.conexion;
+                SqlCommand cmd = new SqlCommand();
+                SQLconexion.Open();
+                cmd.Connection = SQLconexion;
+                cmd.CommandText = "spMostrarCompra";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                SqlDat.Fill(compra);
+                SQLconexion.Close();
+            }
+            catch (Exception)
+            {
+                compra = null;
+            }
+            return compra;
+        }
+
+        public DataTable MostrarFactura(DataTable factura)
+        {
+            SqlConnection SQLconexion = new SqlConnection();
+            try
+            {
+                SQLconexion.ConnectionString = ConexionDB.conexion;
+                SqlCommand cmd = new SqlCommand();
+                SQLconexion.Open();
+                cmd.Connection = SQLconexion;
+                cmd.CommandText = "spMostrarFactura";
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter SqlDat = new SqlDataAdapter(cmd);
+                SqlDat.Fill(factura);
+                SQLconexion.Close();
+            }
+            catch (Exception)
+            {
+                factura = null;
+            }
+            return factura;
+        }
+
         public List<Modelo.Usuario> MostrarUsuarios(List<Modelo.Usuario> listaUsuarios)
         {
             try

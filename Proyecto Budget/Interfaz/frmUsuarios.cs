@@ -59,8 +59,8 @@ namespace Proyecto_Budget.Interfaz
         {
             Control.CRUD_Usuario usuario = new Control.CRUD_Usuario();
             Modelo.Usuario usuarioModelo = new Modelo.Usuario();
-            usuario.iD = int.Parse(dgvUsuarios.CurrentRow.Cells[0].Value.ToString());
-            usuario.eliminarUsuario(usuario.id);
+            usuarioModelo.Id = int.Parse(dgvUsuarios.CurrentRow.Cells[0].Value.ToString());
+            usuario.eliminarUsuario(usuarioModelo);
             //Resetear Datagrid
             dgvUsuarios.DataSource = null;
             dgvUsuarios.DataSource = usuario.MostrarUsuarios();
@@ -113,20 +113,20 @@ namespace Proyecto_Budget.Interfaz
             }
         }
 
-        public byte setRol(int indice)
+        public int setRol(int indice)
         {
             switch (indice)
             {
                 case 0:
-                    return Convert.ToByte(50);
+                    return 50;
                 case 1:
-                    return Convert.ToByte(100);
+                    return 100;
                 case 2:
-                    return Convert.ToByte(150);
+                    return 150;
                 case 3:
-                    return Convert.ToByte(200);
+                    return 200;
                 default:
-                    return Convert.ToByte(200);
+                    return 200;
             }
         }
     }

@@ -57,5 +57,12 @@ namespace Proyecto_Budget
             proveedores.MdiParent = this;
             proveedores.Show();
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            frmReportes reportes = new frmReportes();
+            reportes.MdiParent = this;
+            reportes.Show();
+        }
     }
 }

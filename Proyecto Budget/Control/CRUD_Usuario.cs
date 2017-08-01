@@ -11,36 +11,28 @@ namespace Proyecto_Budget.Control
     class CRUD_Usuario
     {
         public static Conexion.ConexionDB controlDBUsuario = new Conexion.ConexionDB();
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string apellidos { get; set; }
-        public int cedula { get; set; }
-        public int departamento { get; set; }
-        public int puesto { get; set; }
-        public string id_sistema { get; set; }
-        public string contrasena { get; set; }
 
-        public Boolean ValidarUsuario(string usuario, string contrasena)
+        public bool ValidarUsuario(string usuario, string contrasena)
         {
             return controlDBUsuario.ValidarUsuario(usuario, contrasena);
         }
 
-        public static DataTable MostrarUsuarios()
+        public List<Modelo.Usuario> MostrarUsuarios()
         {
-            DataTable DtUsuarios = new DataTable("Usuarios");
-            controlDBUsuario.MostrarProveedores(DtUsuarios);
-            return DtUsuarios;
+            List<Modelo.Usuario> ListUsuarios = new List<Modelo.Usuario>();
+            controlDBUsuario.MostrarUsuarios(ListUsuarios);
+            return ListUsuarios;
         }
 
-        //public void insertarUsuario(CRUD_Usuario usuario)
-        //{
-        //    controlDBUsuario.insertarUsuario(usuario);
-        //}
+        public void insertarUsuario(Modelo.Usuario usuario)
+        {
+            controlDBUsuario.insertarUsuario(usuario);
+        }
 
-        //public void eliminarUsuario(int id)
-        //{
-        //    controlDBUsuario.eliminarUsuario(id);
-        //}
+        public void eliminarUsuario(Modelo.Usuario usuario)
+        {
+            controlDBUsuario.eliminarUsuario(usuario);
+        }
 
         //public void modificarUsuario(Control.CRUD_Usuario usuario)
         //{

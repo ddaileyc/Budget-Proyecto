@@ -53,6 +53,17 @@
     <StartupObject>Proyecto_Budget.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -70,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionDB.cs" />
+    <Compile Include="Control\CRUD_Compra.cs" />
+    <Compile Include="Control\CRUD_Factura.cs" />
     <Compile Include="Control\CRUD_Usuario.cs" />
     <Compile Include="Control\CRUD_Proveedor.cs" />
     <Compile Include="Control\CRUD_Producto.cs" />
@@ -97,11 +110,56 @@
     <Compile Include="Interfaz\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\frmReportes.designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Compra.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Departamento.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Factura.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\modeloBudget.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBudget.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\modeloBudget.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\modeloBudget.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Presupuesto.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Producto.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Proveedor.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Rol.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Usuario.cs">
+      <DependentUpon>modeloBudget.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +175,9 @@
     <EmbeddedResource Include="Interfaz\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +191,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="Modelo\modeloBudget.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>modeloBudget.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\modeloBudget.edmx.diagram">
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Compra.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Departamento.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Factura.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Presupuesto.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Producto.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Proveedor.datasource" />
+    <None Include="Properties\DataSources\Proyecto_Budget.Modelo.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -279,6 +355,16 @@
     <None Include="Resources\1497137621_circle-edit-search-thin.png" />
     <None Include="Resources\if_f155_213240 %281%29.png" />
     <None Include="Resources\if_f155_213240.png" />
+    <Content Include="Modelo\modeloBudget.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+      <LastGenOutput>modeloBudget.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\modeloBudget.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>modeloBudget.edmx</DependentUpon>
+      <LastGenOutput>modeloBudget.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -296,5 +382,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

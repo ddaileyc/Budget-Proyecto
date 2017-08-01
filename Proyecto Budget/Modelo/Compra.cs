@@ -26,8 +26,8 @@ namespace Proyecto_Budget.Modelo
         public int Tipo { get; set; }
         public int Estado { get; set; }
     
+        public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
-        public virtual Usuario Usuario { get; set; }
     }
 }

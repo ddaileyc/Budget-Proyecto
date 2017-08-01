@@ -30,9 +30,9 @@ namespace Proyecto_Budget.Modelo
         public string Id_sistema { get; set; }
         public string Contrasena { get; set; }
     
-        public virtual Departamento Departamento1 { get; set; }
-        public virtual Rol Rol1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Compra> Compra { get; set; }
+        public virtual Departamento Departamento1 { get; set; }
+        public virtual Rol Rol1 { get; set; }
     }
 }

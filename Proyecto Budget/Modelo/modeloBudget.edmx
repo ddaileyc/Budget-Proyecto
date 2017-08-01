@@ -212,6 +212,44 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BudgetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BudgetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compra" EntityType="BudgetModel.Compra" />
+          <EntitySet Name="Departamento" EntityType="BudgetModel.Departamento" />
+          <EntitySet Name="Factura" EntityType="BudgetModel.Factura" />
+          <EntitySet Name="Presupuesto" EntityType="BudgetModel.Presupuesto" />
+          <EntitySet Name="Producto" EntityType="BudgetModel.Producto" />
+          <EntitySet Name="Proveedor" EntityType="BudgetModel.Proveedor" />
+          <EntitySet Name="Rol" EntityType="BudgetModel.Rol" />
+          <EntitySet Name="Usuario" EntityType="BudgetModel.Usuario" />
+          <AssociationSet Name="FK_Compra_Cliente" Association="BudgetModel.FK_Compra_Cliente">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Factura_Compra" Association="BudgetModel.FK_Factura_Compra">
+            <End Role="Compra" EntitySet="Compra" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Presupuesto_Departamento" Association="BudgetModel.FK_Presupuesto_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Presupuesto" EntitySet="Presupuesto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Departamento" Association="BudgetModel.FK_Usuario_Departamento">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Factura_Producto" Association="BudgetModel.FK_Factura_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="Factura" EntitySet="Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Proveedor" Association="BudgetModel.FK_Producto_Proveedor">
+            <End Role="Proveedor" EntitySet="Proveedor" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Rol" Association="BudgetModel.FK_Usuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Compra">
           <Key>
             <PropertyRef Name="Id" />
@@ -221,17 +259,17 @@
           <Property Name="Fecha" Type="DateTime" Precision="0" />
           <Property Name="Tipo" Type="Int32" Nullable="false" />
           <Property Name="Estado" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Compra" FromRole="Compra" ToRole="Factura" />
           <NavigationProperty Name="Usuario" Relationship="BudgetModel.FK_Compra_Cliente" FromRole="Compra" ToRole="Usuario" />
+          <NavigationProperty Name="Factura" Relationship="BudgetModel.FK_Factura_Compra" FromRole="Compra" ToRole="Factura" />
         </EntityType>
         <EntityType Name="Departamento">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Presupuesto" Relationship="Self.FK_Presupuesto_Departamento" FromRole="Departamento" ToRole="Presupuesto" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Departamento" FromRole="Departamento" ToRole="Usuario" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Presupuesto" Relationship="BudgetModel.FK_Presupuesto_Departamento" FromRole="Departamento" ToRole="Presupuesto" />
+          <NavigationProperty Name="Usuario" Relationship="BudgetModel.FK_Usuario_Departamento" FromRole="Departamento" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -243,8 +281,8 @@
           <Property Name="Id_Producto" Type="Int32" />
           <Property Name="Cantidad" Type="Int32" />
           <Property Name="Precio" Type="Decimal" Precision="5" Scale="2" />
-          <NavigationProperty Name="Compra" Relationship="Self.FK_Factura_Compra" FromRole="Factura" ToRole="Compra" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK_Factura_Producto" FromRole="Factura" ToRole="Producto" />
+          <NavigationProperty Name="Compra" Relationship="BudgetModel.FK_Factura_Compra" FromRole="Factura" ToRole="Compra" />
+          <NavigationProperty Name="Producto" Relationship="BudgetModel.FK_Factura_Producto" FromRole="Factura" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Presupuesto">
           <Key>
@@ -255,61 +293,73 @@
           <Property Name="Departamento" Type="Int32" Nullable="false" />
           <Property Name="Fecha_Inicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Fecha_Expiracion" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Monto" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Departamento1" Relationship="Self.FK_Presupuesto_Departamento" FromRole="Presupuesto" ToRole="Departamento" />
+          <Property Name="Monto" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <NavigationProperty Name="Departamento1" Relationship="BudgetModel.FK_Presupuesto_Departamento" FromRole="Presupuesto" ToRole="Departamento" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Proveedor" Type="Int32" Nullable="false" />
-          <Property Name="Costo" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Producto" FromRole="Producto" ToRole="Factura" />
-          <NavigationProperty Name="Proveedor1" Relationship="Self.FK_Producto_Proveedor" FromRole="Producto" ToRole="Proveedor" />
+          <Property Name="Costo" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+          <NavigationProperty Name="Factura" Relationship="BudgetModel.FK_Factura_Producto" FromRole="Producto" ToRole="Factura" />
+          <NavigationProperty Name="Proveedor1" Relationship="BudgetModel.FK_Producto_Proveedor" FromRole="Producto" ToRole="Proveedor" />
         </EntityType>
         <EntityType Name="Proveedor">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Cedula" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="Int32" />
           <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Proveedor" FromRole="Proveedor" ToRole="Producto" />
+          <NavigationProperty Name="Producto" Relationship="BudgetModel.FK_Producto_Proveedor" FromRole="Proveedor" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Usuario" Relationship="Self.FK_Usuario_Rol" FromRole="Rol" ToRole="Usuario" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuario" Relationship="BudgetModel.FK_Usuario_Rol" FromRole="Rol" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Cedula" Type="Int32" />
           <Property Name="Departamento" Type="Int32" Nullable="false" />
           <Property Name="Rol" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="Int32" />
           <Property Name="Id_sistema" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Contrasena" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Departamento1" Relationship="Self.FK_Usuario_Departamento" FromRole="Usuario" ToRole="Departamento" />
-          <NavigationProperty Name="Rol1" Relationship="Self.FK_Usuario_Rol" FromRole="Usuario" ToRole="Rol" />
           <NavigationProperty Name="Compra" Relationship="BudgetModel.FK_Compra_Cliente" FromRole="Usuario" ToRole="Compra" />
+          <NavigationProperty Name="Departamento1" Relationship="BudgetModel.FK_Usuario_Departamento" FromRole="Usuario" ToRole="Departamento" />
+          <NavigationProperty Name="Rol1" Relationship="BudgetModel.FK_Usuario_Rol" FromRole="Usuario" ToRole="Rol" />
         </EntityType>
+        <Association Name="FK_Compra_Cliente">
+          <End Type="BudgetModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="BudgetModel.Compra" Role="Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Factura_Compra">
-          <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
-          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+          <End Type="BudgetModel.Compra" Role="Compra" Multiplicity="1" />
+          <End Type="BudgetModel.Factura" Role="Factura" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Compra">
               <PropertyRef Name="Id" />
@@ -320,8 +370,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Presupuesto_Departamento">
-          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
-          <End Role="Presupuesto" Type="Self.Presupuesto" Multiplicity="*" />
+          <End Type="BudgetModel.Departamento" Role="Departamento" Multiplicity="1" />
+          <End Type="BudgetModel.Presupuesto" Role="Presupuesto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Departamento">
               <PropertyRef Name="Id" />
@@ -332,8 +382,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuario_Departamento">
-          <End Role="Departamento" Type="Self.Departamento" Multiplicity="1" />
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <End Type="BudgetModel.Departamento" Role="Departamento" Multiplicity="1" />
+          <End Type="BudgetModel.Usuario" Role="Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Departamento">
               <PropertyRef Name="Id" />
@@ -344,8 +394,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Factura_Producto">
-          <End Role="Producto" Type="Self.Producto" Multiplicity="0..1" />
-          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
+          <End Type="BudgetModel.Producto" Role="Producto" Multiplicity="0..1" />
+          <End Type="BudgetModel.Factura" Role="Factura" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Producto">
               <PropertyRef Name="Id" />
@@ -356,8 +406,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Producto_Proveedor">
-          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1" />
-          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <End Type="BudgetModel.Proveedor" Role="Proveedor" Multiplicity="1" />
+          <End Type="BudgetModel.Producto" Role="Producto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Proveedor">
               <PropertyRef Name="Id" />
@@ -368,8 +418,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Usuario_Rol">
-          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
-          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <End Type="BudgetModel.Rol" Role="Rol" Multiplicity="1" />
+          <End Type="BudgetModel.Usuario" Role="Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rol">
               <PropertyRef Name="Id" />
@@ -379,49 +429,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BudgetEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Compra" EntityType="Self.Compra" />
-          <EntitySet Name="Departamento" EntityType="Self.Departamento" />
-          <EntitySet Name="Factura" EntityType="Self.Factura" />
-          <EntitySet Name="Presupuesto" EntityType="Self.Presupuesto" />
-          <EntitySet Name="Producto" EntityType="Self.Producto" />
-          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
-          <EntitySet Name="Rol" EntityType="Self.Rol" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK_Factura_Compra" Association="Self.FK_Factura_Compra">
-            <End Role="Compra" EntitySet="Compra" />
-            <End Role="Factura" EntitySet="Factura" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Presupuesto_Departamento" Association="Self.FK_Presupuesto_Departamento">
-            <End Role="Departamento" EntitySet="Departamento" />
-            <End Role="Presupuesto" EntitySet="Presupuesto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Departamento" Association="Self.FK_Usuario_Departamento">
-            <End Role="Departamento" EntitySet="Departamento" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Factura_Producto" Association="Self.FK_Factura_Producto">
-            <End Role="Producto" EntitySet="Producto" />
-            <End Role="Factura" EntitySet="Factura" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Producto_Proveedor" Association="Self.FK_Producto_Proveedor">
-            <End Role="Proveedor" EntitySet="Proveedor" />
-            <End Role="Producto" EntitySet="Producto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
-            <End Role="Rol" EntitySet="Rol" />
-            <End Role="Usuario" EntitySet="Usuario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Compra_Cliente" Association="BudgetModel.FK_Compra_Cliente">
-            <End Role="Usuario" EntitySet="Usuario" />
-            <End Role="Compra" EntitySet="Compra" />
-          </AssociationSet>
-        </EntityContainer>
-        <Association Name="FK_Compra_Cliente">
-          <End Type="BudgetModel.Usuario" Role="Usuario" Multiplicity="1" />
-          <End Type="BudgetModel.Compra" Role="Compra" Multiplicity="*" />
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -430,99 +438,91 @@
           <EntitySetMapping Name="Compra">
             <EntityTypeMapping TypeName="BudgetModel.Compra">
               <MappingFragment StoreEntitySet="Compra">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Departamento">
             <EntityTypeMapping TypeName="BudgetModel.Departamento">
               <MappingFragment StoreEntitySet="Departamento">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="BudgetModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Id_Compra" ColumnName="Id_Compra" />
-                <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+                <ScalarProperty Name="Id_Compra" ColumnName="Id_Compra" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Presupuesto">
             <EntityTypeMapping TypeName="BudgetModel.Presupuesto">
               <MappingFragment StoreEntitySet="Presupuesto">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-                <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
-                <ScalarProperty Name="Fecha_Expiracion" ColumnName="Fecha_Expiracion" />
                 <ScalarProperty Name="Monto" ColumnName="Monto" />
+                <ScalarProperty Name="Fecha_Expiracion" ColumnName="Fecha_Expiracion" />
+                <ScalarProperty Name="Fecha_Inicio" ColumnName="Fecha_Inicio" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Producto">
             <EntityTypeMapping TypeName="BudgetModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Marca" ColumnName="Marca" />
-                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
                 <ScalarProperty Name="Costo" ColumnName="Costo" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Proveedor">
             <EntityTypeMapping TypeName="BudgetModel.Proveedor">
               <MappingFragment StoreEntitySet="Proveedor">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
                 <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rol">
             <EntityTypeMapping TypeName="BudgetModel.Rol">
               <MappingFragment StoreEntitySet="Rol">
-                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Usuario">
             <EntityTypeMapping TypeName="BudgetModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
-                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
-                <ScalarProperty Name="Rol" ColumnName="Rol" />
-                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-                <ScalarProperty Name="Id_sistema" ColumnName="Id_sistema" />
                 <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Id_sistema" ColumnName="Id_sistema" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="FK_Compra_Cliente" TypeName="BudgetModel.FK_Compra_Cliente" StoreEntitySet="Compra">
-            <EndProperty Name="Compra">
-              <ScalarProperty Name="Id" ColumnName="Id" />
-            </EndProperty>
-            <EndProperty Name="Usuario">
-              <ScalarProperty Name="Id" ColumnName="Cliente" />
-            </EndProperty>
-          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -538,7 +538,7 @@
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
-        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>

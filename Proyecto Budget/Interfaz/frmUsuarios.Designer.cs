@@ -40,6 +40,7 @@
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbDepartamentos = new System.Windows.Forms.ComboBox();
+            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbRol = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscarUsuario = new System.Windows.Forms.Button();
@@ -53,11 +54,10 @@
             this.ttBuscar = new System.Windows.Forms.ToolTip(this.components);
             this.ttEliminar = new System.Windows.Forms.ToolTip(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -123,6 +123,7 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 183);
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.RowHeadersVisible = false;
             this.dgvUsuarios.Size = new System.Drawing.Size(946, 263);
             this.dgvUsuarios.TabIndex = 14;
             // 
@@ -162,6 +163,10 @@
             this.cbDepartamentos.Name = "cbDepartamentos";
             this.cbDepartamentos.Size = new System.Drawing.Size(223, 21);
             this.cbDepartamentos.TabIndex = 29;
+            // 
+            // departamentoBindingSource
+            // 
+            this.departamentoBindingSource.DataSource = typeof(Proyecto_Budget.Modelo.Departamento);
             // 
             // cbRol
             // 
@@ -267,10 +272,6 @@
             // 
             this.usuarioBindingSource.DataSource = typeof(Proyecto_Budget.Modelo.Usuario);
             // 
-            // departamentoBindingSource
-            // 
-            this.departamentoBindingSource.DataSource = typeof(Proyecto_Budget.Modelo.Departamento);
-            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,9 +301,9 @@
             this.Text = "Administración de Usuarios de Sistema";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -86,6 +86,7 @@
     <Compile Include="Control\CRUD_Usuario.cs" />
     <Compile Include="Control\CRUD_Proveedor.cs" />
     <Compile Include="Control\CRUD_Producto.cs" />
+    <Compile Include="Control\CRUD_Presupuesto.cs" />
     <Compile Include="Interfaz\frmBudgetAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +122,12 @@
     </Compile>
     <Compile Include="Interfaz\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\frmPresupuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\frmPresupuestos.designer.cs">
+      <DependentUpon>frmPresupuestos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Compra.cs">
       <DependentUpon>modeloBudget.tt</DependentUpon>
@@ -180,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\frmPresupuestos.resx">
+      <DependentUpon>frmPresupuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

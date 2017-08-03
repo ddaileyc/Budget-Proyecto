@@ -133,6 +133,7 @@
             this.btnPresup.Text = "Presupuestos";
             this.btnPresup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPresup.UseVisualStyleBackColor = true;
+            this.btnPresup.Click += new System.EventHandler(this.btnPresup_Click);
             // 
             // btnAdmon
             // 

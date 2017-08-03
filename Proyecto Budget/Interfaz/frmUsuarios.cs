@@ -129,5 +129,10 @@ namespace Proyecto_Budget.Interfaz
                     return 200;
             }
         }
+
+        private void btnBuscarUser_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

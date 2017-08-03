@@ -228,6 +228,20 @@ namespace Proyecto_Budget.Conexion
                 MessageBox.Show("Error: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void insertarPresupuesto(Modelo.Presupuesto presupuestoDB)
+        {
+            try
+            {
+                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
+                budgetContext.Presupuesto.Add(presupuestoDB);
+                budgetContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         #endregion
 
         #region "Metodos de elmiminacion de datos"
@@ -307,6 +321,30 @@ namespace Proyecto_Budget.Conexion
                     MessageBox.Show("No se encontraron registros", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void eliminarPresupuesto(Modelo.Presupuesto presupuesto)
+        {
+            try
+            {
+                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
+                budgetContext.Presupuesto.Attach(presupuesto);
+                var borrar = budgetContext.Presupuesto.FirstOrDefault((x => x.Id == presupuesto.Id));
+                if (borrar != null)
+                {
+                    budgetContext.Presupuesto.Remove(presupuesto);
+                    budgetContext.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron registros", "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {

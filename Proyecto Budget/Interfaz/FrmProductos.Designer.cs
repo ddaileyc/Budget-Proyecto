@@ -57,10 +57,12 @@
             // dgvProductos
             // 
             this.dgvProductos.AllowUserToOrderColumns = true;
+            this.dgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dgvProductos.Location = new System.Drawing.Point(12, 176);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(869, 188);
             this.dgvProductos.TabIndex = 1;

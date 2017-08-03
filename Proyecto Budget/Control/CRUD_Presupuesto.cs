@@ -19,5 +19,11 @@ namespace Proyecto_Budget.Control
             Conexion.ConexionDB controlDBPresupuesto = new Conexion.ConexionDB();
             controlDBPresupuesto.eliminarPresupuesto(presupuesto);
         }
+
+        //public void editarPresupuesto(Modelo.Presupuesto presupuesto)
+        //{
+        //    Conexion.ConexionDB controlDBPresupuesto = new Conexion.ConexionDB();
+        //    controlDBPresupuesto.editarPresupuesto(presupuesto);
+        //}
     }
 }

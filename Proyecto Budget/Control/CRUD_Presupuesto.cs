@@ -8,8 +8,16 @@ namespace Proyecto_Budget.Control
 {
     public class CRUD_Presupuesto
     {
-        public string ID { get; set; }
-        public string Nombre { get; set; }
-        public string Presupuesto { get; set; }
+        public void insertarPresupuesto(Modelo.Presupuesto presupuesto)
+        {
+        Conexion.ConexionDB controlDBPresupuesto = new Conexion.ConexionDB();
+        controlDBPresupuesto.insertarPresupuesto(presupuesto);
+        }
+
+        public void eliminarPresupuesto(Modelo.Presupuesto presupuesto)
+        {
+            Conexion.ConexionDB controlDBPresupuesto = new Conexion.ConexionDB();
+            controlDBPresupuesto.eliminarPresupuesto(presupuesto);
+        }
     }
 }

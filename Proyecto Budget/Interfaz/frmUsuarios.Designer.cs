@@ -251,6 +251,7 @@
             this.btnBuscarUser.TabIndex = 32;
             this.ttBuscar.SetToolTip(this.btnBuscarUser, "Buscar usuario existente");
             this.btnBuscarUser.UseVisualStyleBackColor = true;
+            this.btnBuscarUser.Click += new System.EventHandler(this.btnBuscarUser_Click);
             // 
             // ttModificar
             // 

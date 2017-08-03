@@ -72,6 +72,7 @@
             this.btnEliminarPresupuesto.TabIndex = 50;
             this.ttEliminar.SetToolTip(this.btnEliminarPresupuesto, "Eliminar  presupuesto");
             this.btnEliminarPresupuesto.UseVisualStyleBackColor = true;
+            this.btnEliminarPresupuesto.Click += new System.EventHandler(this.btnEliminarPresupuesto_Click);
             // 
             // ttAgregar
             // 
@@ -90,7 +91,7 @@
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(247, 120);
+            this.txtMonto.Location = new System.Drawing.Point(256, 120);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(150, 20);
             this.txtMonto.TabIndex = 45;
@@ -108,6 +109,7 @@
             this.btnEditarPresupuesto.TabIndex = 51;
             this.ttModificar.SetToolTip(this.btnEditarPresupuesto, "Modificar  presupuesto seleccionado");
             this.btnEditarPresupuesto.UseVisualStyleBackColor = true;
+            this.btnEditarPresupuesto.Click += new System.EventHandler(this.btnEditarPresupuesto_Click);
             // 
             // btnBuscarPresupuesto
             // 
@@ -122,11 +124,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 123);
+            this.label2.Location = new System.Drawing.Point(157, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 40;
-            this.label2.Text = "Monto:";
+            this.label2.Text = "Monto (Miles de $):";
             // 
             // ttBuscar
             // 
@@ -135,7 +137,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 20);
+            this.label1.Location = new System.Drawing.Point(157, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 13);
             this.label1.TabIndex = 39;
@@ -163,6 +165,7 @@
             this.dgvPresupuestos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPresupuestos.Size = new System.Drawing.Size(609, 188);
             this.dgvPresupuestos.TabIndex = 37;
+            this.dgvPresupuestos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresupuestos_CellEnter);
             // 
             // cbDepartamentos
             // 
@@ -179,14 +182,14 @@
             "Recursos Humanos",
             "Mercadeo",
             "Capacitacion"});
-            this.cbDepartamentos.Location = new System.Drawing.Point(247, 17);
+            this.cbDepartamentos.Location = new System.Drawing.Point(256, 17);
             this.cbDepartamentos.Name = "cbDepartamentos";
             this.cbDepartamentos.Size = new System.Drawing.Size(150, 21);
             this.cbDepartamentos.TabIndex = 53;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(247, 44);
+            this.txtDesc.Location = new System.Drawing.Point(256, 44);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(150, 20);
             this.txtDesc.TabIndex = 55;
@@ -194,7 +197,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(158, 47);
+            this.label3.Location = new System.Drawing.Point(157, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 54;
@@ -203,7 +206,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(158, 76);
+            this.label4.Location = new System.Drawing.Point(157, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 56;
@@ -213,7 +216,7 @@
             // 
             this.dtInicio.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInicio.Location = new System.Drawing.Point(247, 70);
+            this.dtInicio.Location = new System.Drawing.Point(256, 70);
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(150, 20);
             this.dtInicio.TabIndex = 57;
@@ -222,7 +225,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(158, 100);
+            this.label5.Location = new System.Drawing.Point(157, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 58;
@@ -232,7 +235,7 @@
             // 
             this.dtFin.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFin.Location = new System.Drawing.Point(247, 96);
+            this.dtFin.Location = new System.Drawing.Point(256, 96);
             this.dtFin.Name = "dtFin";
             this.dtFin.Size = new System.Drawing.Size(150, 20);
             this.dtFin.TabIndex = 60;
@@ -301,7 +304,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmPresupuestos";
-            this.Text = "Administración de presupuestos";
+            this.Text = " c";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresupuestos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartamentos)).EndInit();

@@ -99,6 +99,12 @@
     <Compile Include="Interfaz\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\frmPassReset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\frmPassReset.Designer.cs">
+      <DependentUpon>frmPassReset.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\FrmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\frmPassReset.resx">
+      <DependentUpon>frmPassReset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\FrmProductos.resx">
       <DependentUpon>FrmProductos.cs</DependentUpon>
@@ -375,6 +384,7 @@
       <DependentUpon>modeloBudget.edmx</DependentUpon>
       <LastGenOutput>modeloBudget.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\if_Lock_protected_safe_privacy_password_security_1886969.png" />
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <ItemGroup>

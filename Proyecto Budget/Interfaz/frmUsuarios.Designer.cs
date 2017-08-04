@@ -44,15 +44,16 @@
             this.cbRol = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuscarUsuario = new System.Windows.Forms.Button();
-            this.btnEditarUsuario = new System.Windows.Forms.Button();
-            this.btnEliminarUsuario = new System.Windows.Forms.Button();
-            this.btnAgregarUsuario = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnBuscarUser = new System.Windows.Forms.Button();
             this.ttModificar = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEditarUsuario = new System.Windows.Forms.Button();
             this.ttAgregar = new System.Windows.Forms.ToolTip(this.components);
+            this.btnPassReset = new System.Windows.Forms.Button();
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.ttBuscar = new System.Windows.Forms.ToolTip(this.components);
+            this.btnBuscarUser = new System.Windows.Forms.Button();
             this.ttEliminar = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEliminarUsuario = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
@@ -124,8 +125,9 @@
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 183);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersVisible = false;
-            this.dgvUsuarios.Size = new System.Drawing.Size(946, 263);
+            this.dgvUsuarios.Size = new System.Drawing.Size(714, 206);
             this.dgvUsuarios.TabIndex = 14;
+            this.dgvUsuarios.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellEnter);
             // 
             // txtApellidos
             // 
@@ -199,6 +201,10 @@
             this.btnBuscarUsuario.TabIndex = 32;
             this.btnBuscarUsuario.UseVisualStyleBackColor = true;
             // 
+            // ttModificar
+            // 
+            this.ttModificar.IsBalloon = true;
+            // 
             // btnEditarUsuario
             // 
             this.btnEditarUsuario.Image = global::Proyecto_Budget.Properties.Resources._1496729902_circle_edit_line;
@@ -208,16 +214,22 @@
             this.btnEditarUsuario.TabIndex = 18;
             this.ttModificar.SetToolTip(this.btnEditarUsuario, "Modificar usuario seleccionado");
             this.btnEditarUsuario.UseVisualStyleBackColor = true;
+            this.btnEditarUsuario.Click += new System.EventHandler(this.btnEditarUsuario_Click);
             // 
-            // btnEliminarUsuario
+            // ttAgregar
             // 
-            this.btnEliminarUsuario.Image = global::Proyecto_Budget.Properties.Resources._1496729761_flat_style_circle_delete_trash;
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(848, 38);
-            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
-            this.btnEliminarUsuario.Size = new System.Drawing.Size(110, 100);
-            this.btnEliminarUsuario.TabIndex = 17;
-            this.ttEliminar.SetToolTip(this.btnEliminarUsuario, "Eliminar usuario");
-            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            this.ttAgregar.IsBalloon = true;
+            // 
+            // btnPassReset
+            // 
+            this.btnPassReset.Image = global::Proyecto_Budget.Properties.Resources.if_Lock_protected_safe_privacy_password_security_1886969;
+            this.btnPassReset.Location = new System.Drawing.Point(732, 183);
+            this.btnPassReset.Name = "btnPassReset";
+            this.btnPassReset.Size = new System.Drawing.Size(110, 100);
+            this.btnPassReset.TabIndex = 33;
+            this.ttAgregar.SetToolTip(this.btnPassReset, "Reestablecer contraseña para usuario seleccionado");
+            this.btnPassReset.UseVisualStyleBackColor = true;
+            this.btnPassReset.Click += new System.EventHandler(this.btnPassReset_Click);
             // 
             // btnAgregarUsuario
             // 
@@ -230,6 +242,34 @@
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
+            // ttBuscar
+            // 
+            this.ttBuscar.IsBalloon = true;
+            // 
+            // btnBuscarUser
+            // 
+            this.btnBuscarUser.Image = global::Proyecto_Budget.Properties.Resources._1497137621_circle_edit_search_thin;
+            this.btnBuscarUser.Location = new System.Drawing.Point(616, 38);
+            this.btnBuscarUser.Name = "btnBuscarUser";
+            this.btnBuscarUser.Size = new System.Drawing.Size(110, 100);
+            this.btnBuscarUser.TabIndex = 32;
+            this.ttBuscar.SetToolTip(this.btnBuscarUser, "Buscar usuario existente");
+            this.btnBuscarUser.UseVisualStyleBackColor = true;
+            // 
+            // ttEliminar
+            // 
+            this.ttEliminar.IsBalloon = true;
+            // 
+            // btnEliminarUsuario
+            // 
+            this.btnEliminarUsuario.Image = global::Proyecto_Budget.Properties.Resources._1496729761_flat_style_circle_delete_trash;
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(732, 289);
+            this.btnEliminarUsuario.Name = "btnEliminarUsuario";
+            this.btnEliminarUsuario.Size = new System.Drawing.Size(110, 100);
+            this.btnEliminarUsuario.TabIndex = 17;
+            this.ttEliminar.SetToolTip(this.btnEliminarUsuario, "Eliminar usuario");
+            this.btnEliminarUsuario.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -241,33 +281,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnBuscarUser
-            // 
-            this.btnBuscarUser.Image = global::Proyecto_Budget.Properties.Resources._1497137621_circle_edit_search_thin;
-            this.btnBuscarUser.Location = new System.Drawing.Point(616, 38);
-            this.btnBuscarUser.Name = "btnBuscarUser";
-            this.btnBuscarUser.Size = new System.Drawing.Size(110, 100);
-            this.btnBuscarUser.TabIndex = 32;
-            this.ttBuscar.SetToolTip(this.btnBuscarUser, "Buscar usuario existente");
-            this.btnBuscarUser.UseVisualStyleBackColor = true;
-            this.btnBuscarUser.Click += new System.EventHandler(this.btnBuscarUser_Click);
-            // 
-            // ttModificar
-            // 
-            this.ttModificar.IsBalloon = true;
-            // 
-            // ttAgregar
-            // 
-            this.ttAgregar.IsBalloon = true;
-            // 
-            // ttBuscar
-            // 
-            this.ttBuscar.IsBalloon = true;
-            // 
-            // ttEliminar
-            // 
-            this.ttEliminar.IsBalloon = true;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // usuarioBindingSource
             // 
@@ -278,7 +292,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(972, 457);
+            this.ClientSize = new System.Drawing.Size(854, 398);
+            this.Controls.Add(this.btnPassReset);
             this.Controls.Add(this.btnBuscarUser);
             this.Controls.Add(this.cbRol);
             this.Controls.Add(this.label6);
@@ -298,6 +313,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvUsuarios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.IsMdiContainer = true;
             this.Name = "frmUsuarios";
             this.Text = "Administración de Usuarios de Sistema";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
@@ -336,5 +352,6 @@
         private System.Windows.Forms.ToolTip ttBuscar;
         private System.Windows.Forms.BindingSource departamentoBindingSource;
         private System.Windows.Forms.BindingSource usuarioBindingSource;
+        private System.Windows.Forms.Button btnPassReset;
     }
 }

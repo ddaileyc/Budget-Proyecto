@@ -609,5 +609,15 @@ namespace Proyecto_Budget.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_Lock_protected_safe_privacy_password_security_1886969 {
+            get {
+                object obj = ResourceManager.GetObject("if_Lock_protected_safe_privacy_password_security_1886969", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

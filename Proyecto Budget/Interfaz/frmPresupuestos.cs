@@ -145,14 +145,35 @@ namespace Proyecto_Budget.Interfaz
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar ususario: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al agregar presupuesto: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             cargarPresupuestos();
         }
 
         private void btnEditarPresupuesto_Click(object sender, EventArgs e)
         {
-
+            Modelo.Presupuesto presupuestoModelo = new Modelo.Presupuesto();
+            Modelo.BudgetEntities modelo = new Modelo.BudgetEntities();
+            presupuestoModelo.Id = int.Parse(dgvPresupuestos.CurrentRow.Cells[0].Value.ToString());
+            try
+            {
+                var original = modelo.Presupuesto.Find(presupuestoModelo.Id);
+                if (original != null)
+                {
+                    original.Descripcion = txtDesc.Text;
+                    original.Departamento = setDptID(cbDepartamentos.SelectedIndex);
+                    original.Monto = decimal.Parse(txtMonto.Text);
+                    original.Fecha_Inicio = dtInicio.Value.Date;
+                    original.Fecha_Expiracion = dtFin.Value.Date;
+                    modelo.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar presupuesto: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //Resetear Datagrid
+            cargarPresupuestos();
         }
 
         private void btnEliminarPresupuesto_Click(object sender, EventArgs e)
@@ -160,7 +181,14 @@ namespace Proyecto_Budget.Interfaz
             Control.CRUD_Presupuesto presupuesto = new Control.CRUD_Presupuesto();
             Modelo.Presupuesto presupuestoModelo = new Modelo.Presupuesto();
             presupuestoModelo.Id = int.Parse(dgvPresupuestos.CurrentRow.Cells[0].Value.ToString());
-            presupuesto.eliminarPresupuesto(presupuestoModelo);
+            try
+            {
+                presupuesto.eliminarPresupuesto(presupuestoModelo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar presupuesto: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             //Resetear Datagrid
             cargarPresupuestos();
         }

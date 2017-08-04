@@ -17,13 +17,6 @@ namespace Proyecto_Budget.Control
             return controlDBUsuario.ValidarUsuario(usuario, contrasena);
         }
 
-        public List<Modelo.Usuario> MostrarUsuarios()
-        {
-            List<Modelo.Usuario> ListUsuarios = new List<Modelo.Usuario>();
-            controlDBUsuario.MostrarUsuarios(ListUsuarios);
-            return ListUsuarios;
-        }
-
         public void insertarUsuario(Modelo.Usuario usuario)
         {
             controlDBUsuario.insertarUsuario(usuario);
@@ -33,10 +26,5 @@ namespace Proyecto_Budget.Control
         {
             controlDBUsuario.eliminarUsuario(usuario);
         }
-
-        //public void modificarUsuario(Control.CRUD_Usuario usuario)
-        //{
-        //    controlDBUsuario.modificarUsuario(usuario);
-        //}
     }
 }

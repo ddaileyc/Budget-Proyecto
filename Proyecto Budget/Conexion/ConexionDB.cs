@@ -130,21 +130,6 @@ namespace Proyecto_Budget.Conexion
             }
             return factura;
         }
-
-        public List<Modelo.Usuario> MostrarUsuarios(List<Modelo.Usuario> listaUsuarios)
-        {
-            try
-            {
-                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
-                listaUsuarios = budgetContext.Usuario.ToList();
-                return listaUsuarios;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error al mostrar usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-        }
         #endregion
 
         #region "Metodos de insercion de datos"

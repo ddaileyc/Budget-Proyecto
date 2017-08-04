@@ -40,7 +40,6 @@ namespace Proyecto_Budget
         private void btnAdmon_Click(object sender, EventArgs e)
         {
             frmUsuarios usuarios = new frmUsuarios();
-            usuarios.MdiParent = this;
             usuarios.Show();
         }
 

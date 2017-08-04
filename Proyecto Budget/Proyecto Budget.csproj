@@ -67,8 +67,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -92,6 +94,12 @@
     </Compile>
     <Compile Include="Interfaz\frmBudgetAdmin.Designer.cs">
       <DependentUpon>frmBudgetAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\frmBudgetUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\frmBudgetUser.Designer.cs">
+      <DependentUpon>frmBudgetUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\frmLogin.cs">
       <SubType>Form</SubType>
@@ -176,8 +184,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Web References\cr.fi.bccr.indicadoreseconomicos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Interfaz\frmBudgetAdmin.resx">
       <DependentUpon>frmBudgetAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\frmBudgetUser.resx">
+      <DependentUpon>frmBudgetUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -234,6 +250,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\cr.fi.bccr.indicadoreseconomicos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cr.fi.bccr.indicadoreseconomicos\wsIndicadoresEconomicos.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -357,6 +378,7 @@
     <Content Include="Conexion\CONEXION INSTRUCCIONES.txt" />
     <Content Include="Control\CONTROL INSTRUCCIONES.txt" />
     <Content Include="Interfaz\INTERFAZ INSTRUCCIONES.txt" />
+    <None Include="Web References\cr.fi.bccr.indicadoreseconomicos\wsIndicadoresEconomicos.disco" />
     <None Include="Resources\1496729902_circle-edit-line.png" />
     <None Include="Resources\1496729900_circle-edit-line.png" />
     <None Include="Resources\1496729761_flat-style-circle-delete-trash.png" />
@@ -402,6 +424,24 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cr.fi.bccr.indicadoreseconomicos\</RelPath>
+      <UpdateFromURL>http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Proyecto_Budget_cr_fi_bccr_indicadoreseconomicos_wsIndicadoresEconomicos</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

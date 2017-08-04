@@ -1,5 +1,4 @@
-﻿using Proyecto_Budget.Interfaz;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto_Budget
+namespace Proyecto_Budget.Interfaz
 {
-    public partial class frmPrincipalAdmin : Form
+    public partial class frmBudgetUser : Form
     {
-        public frmPrincipalAdmin()
+        public frmBudgetUser()
         {
             InitializeComponent();
             //Carga de web service del BBCR
@@ -30,8 +29,7 @@ namespace Proyecto_Budget
             lblVenta.Text += valorVenta.ToString();
             gbTipoCambio.Text += " al " + Convert.ToDateTime(tipoDeCambioCompra.Tables[0].Rows[0].ItemArray[1].ToString()).ToShortDateString();
         }
-        
-        #region "Modulos de sistema"        
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             frmLogin login = new frmLogin();
@@ -46,40 +44,5 @@ namespace Proyecto_Budget
                 login.Close();
             }
         }
-
-        private void btnAdmon_Click(object sender, EventArgs e)
-        {
-            frmUsuarios usuarios = new frmUsuarios();
-            usuarios.Show();
-        }
-
-        private void btnProd_Click(object sender, EventArgs e)
-        {
-            FrmProductos productos = new FrmProductos();
-            productos.MdiParent = this;
-            productos.Show();
-        }
-
-        private void btnProv_Click(object sender, EventArgs e)
-        {
-            frmProveedores proveedores = new frmProveedores();
-            proveedores.MdiParent = this;
-            proveedores.Show();
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            frmReportes reportes = new frmReportes();
-            reportes.MdiParent = this;
-            reportes.Show();
-        }
-
-        private void btnPresup_Click(object sender, EventArgs e)
-        {
-            frmPresupuestos presupuestos = new frmPresupuestos();
-            presupuestos.MdiParent = this;
-            presupuestos.Show();
-        }
     }
-        #endregion
 }

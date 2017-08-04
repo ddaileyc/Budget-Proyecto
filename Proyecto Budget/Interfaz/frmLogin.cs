@@ -13,6 +13,7 @@ namespace Proyecto_Budget.Interfaz
     public partial class frmLogin : Form
     {
         frmPrincipalAdmin principal = new frmPrincipalAdmin();
+        frmBudgetUser principalUsuario = new frmBudgetUser();
         public frmLogin()
         {
             InitializeComponent();
@@ -24,8 +25,16 @@ namespace Proyecto_Budget.Interfaz
             Control.CRUD_Usuario validacion = new Control.CRUD_Usuario();
             if (validacion.ValidarUsuario(txtUsuario.Text, txtPassword.Text))
             {
-                principal.Show();
-                this.Hide();
+                if (setPermisos() != 10)
+                {
+                    principalUsuario.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    principal.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -57,6 +66,27 @@ namespace Proyecto_Budget.Interfaz
         private void label2_MouseLeave(object sender, EventArgs e)
         {
             this.lblOlvidoContrasena.ForeColor = Color.DarkBlue;
+        }
+
+        private int setPermisos()
+        {
+            Modelo.Usuario usuarioModelo = new Modelo.Usuario();
+            Modelo.BudgetEntities modelo = new Modelo.BudgetEntities();
+            usuarioModelo.Id_sistema = txtUsuario.Text;
+            try
+            {
+                var original = modelo.Usuario.FirstOrDefault(x => x.Id_sistema == usuarioModelo.Id_sistema);
+                if (original != null)
+                {
+                    return original.Rol;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar presupuesto: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            return 0;
         }
     }
 }

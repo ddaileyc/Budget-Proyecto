@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlToolbar = new System.Windows.Forms.Panel();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnConta = new System.Windows.Forms.Button();
+            this.btnPresup = new System.Windows.Forms.Button();
             this.gbTipoCambio = new System.Windows.Forms.GroupBox();
             this.lblVenta = new System.Windows.Forms.Label();
             this.lblCompra = new System.Windows.Forms.Label();
@@ -37,9 +40,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnAdminUsuario = new System.Windows.Forms.Button();
-            this.btnPresup = new System.Windows.Forms.Button();
-            this.btnConta = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
             this.pnlToolbar.SuspendLayout();
             this.gbTipoCambio.SuspendLayout();
             this.SuspendLayout();
@@ -59,6 +59,51 @@
             this.pnlToolbar.Name = "pnlToolbar";
             this.pnlToolbar.Size = new System.Drawing.Size(1242, 94);
             this.pnlToolbar.TabIndex = 1;
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.Image = global::Proyecto_Budget.Properties.Resources._1496307039_line_chart;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnReportes.Location = new System.Drawing.Point(524, 0);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(131, 94);
+            this.btnReportes.TabIndex = 14;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            // 
+            // btnConta
+            // 
+            this.btnConta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConta.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConta.Image = global::Proyecto_Budget.Properties.Resources._1496303887_calculator;
+            this.btnConta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnConta.Location = new System.Drawing.Point(393, 0);
+            this.btnConta.Name = "btnConta";
+            this.btnConta.Size = new System.Drawing.Size(131, 94);
+            this.btnConta.TabIndex = 13;
+            this.btnConta.Text = "Contabilidad";
+            this.btnConta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnConta.UseVisualStyleBackColor = true;
+            // 
+            // btnPresup
+            // 
+            this.btnPresup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPresup.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPresup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresup.Image = global::Proyecto_Budget.Properties.Resources.if_f155_213240;
+            this.btnPresup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPresup.Location = new System.Drawing.Point(262, 0);
+            this.btnPresup.Name = "btnPresup";
+            this.btnPresup.Size = new System.Drawing.Size(131, 94);
+            this.btnPresup.TabIndex = 11;
+            this.btnPresup.Text = "Presupuestos";
+            this.btnPresup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPresup.UseVisualStyleBackColor = true;
             // 
             // gbTipoCambio
             // 
@@ -166,51 +211,6 @@
             this.btnAdminUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdminUsuario.UseVisualStyleBackColor = true;
             // 
-            // btnPresup
-            // 
-            this.btnPresup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPresup.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnPresup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPresup.Image = global::Proyecto_Budget.Properties.Resources.if_f155_213240;
-            this.btnPresup.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPresup.Location = new System.Drawing.Point(262, 0);
-            this.btnPresup.Name = "btnPresup";
-            this.btnPresup.Size = new System.Drawing.Size(131, 94);
-            this.btnPresup.TabIndex = 11;
-            this.btnPresup.Text = "Presupuestos";
-            this.btnPresup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPresup.UseVisualStyleBackColor = true;
-            // 
-            // btnConta
-            // 
-            this.btnConta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConta.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConta.Image = global::Proyecto_Budget.Properties.Resources._1496303887_calculator;
-            this.btnConta.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnConta.Location = new System.Drawing.Point(393, 0);
-            this.btnConta.Name = "btnConta";
-            this.btnConta.Size = new System.Drawing.Size(131, 94);
-            this.btnConta.TabIndex = 13;
-            this.btnConta.Text = "Contabilidad";
-            this.btnConta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnConta.UseVisualStyleBackColor = true;
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.Image = global::Proyecto_Budget.Properties.Resources._1496307039_line_chart;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReportes.Location = new System.Drawing.Point(524, 0);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(131, 94);
-            this.btnReportes.TabIndex = 14;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            // 
             // frmBudgetUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,7 +219,9 @@
             this.ClientSize = new System.Drawing.Size(1242, 804);
             this.Controls.Add(this.pnlToolbar);
             this.Name = "frmBudgetUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUDGET | Sistema de Control de Presupuestos | Usuario";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlToolbar.ResumeLayout(false);
             this.gbTipoCambio.ResumeLayout(false);
             this.gbTipoCambio.PerformLayout();

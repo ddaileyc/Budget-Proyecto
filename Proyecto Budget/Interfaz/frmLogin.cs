@@ -12,27 +12,26 @@ namespace Proyecto_Budget.Interfaz
 {
     public partial class frmLogin : Form
     {
-        frmPrincipalAdmin principal = new frmPrincipalAdmin();
-        frmBudgetUser principalUsuario = new frmBudgetUser();
         public frmLogin()
         {
             InitializeComponent();
-            txtUsuario.Focus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            frmPrincipalAdmin formAdmin = new frmPrincipalAdmin();
+            frmBudgetUser formUsuario = new frmBudgetUser(setPermisos(), setDpto());
             Control.CRUD_Usuario validacion = new Control.CRUD_Usuario();
             if (validacion.ValidarUsuario(txtUsuario.Text, txtPassword.Text))
             {
                 if (setPermisos() != 10)
                 {
-                    principalUsuario.Show();
+                    formUsuario.Show();
                     this.Hide();
                 }
                 else
                 {
-                    principal.Show();
+                    formAdmin.Show();
                     this.Hide();
                 }
             }
@@ -42,12 +41,12 @@ namespace Proyecto_Budget.Interfaz
             }
         }
 
+        #region "Metodos esteticos de form"
         private void label3_Click(object sender, EventArgs e)
         {
             //Cierra la aplicacion por completo
             Application.Exit();
         }
-        //Metodos esteticos de form
         private void label3_MouseHover(object sender, EventArgs e)
         {
             this.lblSalir.ForeColor = Color.Red;
@@ -67,6 +66,29 @@ namespace Proyecto_Budget.Interfaz
         {
             this.lblOlvidoContrasena.ForeColor = Color.DarkBlue;
         }
+        #endregion
+
+        #region Setear parametros de usuario
+        private int setDpto()
+        {
+            Modelo.Usuario usuarioModelo = new Modelo.Usuario();
+            Modelo.BudgetEntities modelo = new Modelo.BudgetEntities();
+            usuarioModelo.Id_sistema = txtUsuario.Text;
+            try
+            {
+                var original = modelo.Usuario.FirstOrDefault(x => x.Id_sistema == usuarioModelo.Id_sistema);
+                if (original != null)
+                {
+                    return original.Departamento;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Usuario no pertenece a ningún departamento: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            return 0;
+        }
 
         private int setPermisos()
         {
@@ -83,10 +105,11 @@ namespace Proyecto_Budget.Interfaz
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al editar presupuesto: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario no pertenece a ningún rol: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
             return 0;
         }
+        #endregion
     }
 }

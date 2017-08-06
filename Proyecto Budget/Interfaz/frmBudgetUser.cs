@@ -13,7 +13,7 @@ namespace Proyecto_Budget.Interfaz
 {
     public partial class frmBudgetUser : Form
     {
-        public frmBudgetUser()
+        public frmBudgetUser(int rol, int dpto)
         {
             InitializeComponent();
             //Carga de web service del BBCR
@@ -28,6 +28,37 @@ namespace Proyecto_Budget.Interfaz
             lblCompra.Text += valorCompra.ToString();
             lblVenta.Text += valorVenta.ToString();
             gbTipoCambio.Text += " al " + Convert.ToDateTime(tipoDeCambioCompra.Tables[0].Rows[0].ItemArray[1].ToString()).ToShortDateString();
+            //Control de controles a desplegar por rol de usuario
+            //Dependiente
+            if (rol == 40)
+            {
+                btnConta.Hide();
+                btnPresup.Hide();
+                btnReportes.Hide();
+                if (dpto == 60)
+                {
+                    btnPresup.Show();
+                }
+                if (dpto == 30)
+                {
+                    btnConta.Show();
+                }
+            }
+            //Jefe
+            if (rol != 40)
+            {
+                btnConta.Hide();
+                btnPresup.Hide();
+                if (dpto == 60)
+                {
+                    btnPresup.Show();
+                }
+                if (dpto == 30)
+                {
+                    btnConta.Show();
+                    //frmAprobarCompras.Show();
+                }
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

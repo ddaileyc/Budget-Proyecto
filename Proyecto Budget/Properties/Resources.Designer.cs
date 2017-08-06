@@ -619,5 +619,25 @@ namespace Proyecto_Budget.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_shopping_cart_465074 {
+            get {
+                object obj = ResourceManager.GetObject("if_shopping_cart_465074", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_shopping_cart_465074__1_ {
+            get {
+                object obj = ResourceManager.GetObject("if_shopping_cart_465074 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

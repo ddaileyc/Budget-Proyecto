@@ -101,6 +101,12 @@
     <Compile Include="Interfaz\frmBudgetUser.Designer.cs">
       <DependentUpon>frmBudgetUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\frmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmBudgetUser.resx">
       <DependentUpon>frmBudgetUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -407,6 +416,8 @@
       <LastGenOutput>modeloBudget.cs</LastGenOutput>
     </Content>
     <None Include="Resources\if_Lock_protected_safe_privacy_password_security_1886969.png" />
+    <None Include="Resources\if_shopping_cart_465074.png" />
+    <None Include="Resources\if_shopping_cart_465074 %281%29.png" />
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <ItemGroup>

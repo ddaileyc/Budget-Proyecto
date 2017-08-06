@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -79,6 +80,16 @@ namespace Proyecto_Budget
             frmPresupuestos presupuestos = new frmPresupuestos();
             presupuestos.MdiParent = this;
             presupuestos.Show();
+        }
+
+        private void gbTipoCambio_Enter(object sender, EventArgs e)
+        {
+            Process.Start("http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&CodCuadro=%20400");
+        }
+
+        private void btnIR_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&CodCuadro=%20400");
         }
     }
         #endregion

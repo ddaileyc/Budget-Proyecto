@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Proyecto_Budget.Interfaz
 {
     public partial class frmBudgetUser : Form
     {
-        public frmBudgetUser()
+        public frmBudgetUser(int rol, int dpto)
         {
             InitializeComponent();
             //Carga de web service del BBCR
@@ -28,6 +29,38 @@ namespace Proyecto_Budget.Interfaz
             lblCompra.Text += valorCompra.ToString();
             lblVenta.Text += valorVenta.ToString();
             gbTipoCambio.Text += " al " + Convert.ToDateTime(tipoDeCambioCompra.Tables[0].Rows[0].ItemArray[1].ToString()).ToShortDateString();
+            //Control de controles a desplegar por rol de usuario
+            //Dependiente
+            if (rol == 40)
+            {
+                btnConta.Hide();
+                btnPresup.Hide();
+                btnReportes.Hide();
+                if (dpto == 60)
+                {
+                    btnPresup.Show();
+                }
+                if (dpto == 30)
+                {
+                    btnConta.Show();
+                }
+            }
+            //Jefe
+            if (rol != 40)
+            {
+                btnConta.Hide();
+                btnPresup.Hide();
+                if (dpto == 60)
+                {
+                    btnPresup.Show();
+                }
+                if (dpto == 30)
+                {
+                    btnConta.Show();
+                    //frmAprobarCompras.Show();
+                }
+            }
+            gbTipoCambio.Dock = DockStyle.Left;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -43,6 +76,17 @@ namespace Proyecto_Budget.Interfaz
             {
                 login.Close();
             }
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            frmCompras formCompras = new frmCompras();
+            formCompras.Show();
+        }
+
+        private void btnIR_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&CodCuadro=%20400");
         }
     }
 }

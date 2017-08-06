@@ -418,6 +418,7 @@
     <None Include="Resources\if_Lock_protected_safe_privacy_password_security_1886969.png" />
     <None Include="Resources\if_shopping_cart_465074.png" />
     <None Include="Resources\if_shopping_cart_465074 %281%29.png" />
+    <None Include="Resources\if_ic_add_shopping_cart_48px_352007.png" />
     <Content Include="Resources\RESOURCES INSTRUCCIONES.txt" />
   </ItemGroup>
   <ItemGroup>

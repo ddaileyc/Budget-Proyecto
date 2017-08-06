@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalAdmin));
             this.pnlToolbar = new System.Windows.Forms.Panel();
+            this.gbTipoCambio = new System.Windows.Forms.GroupBox();
+            this.lblVenta = new System.Windows.Forms.Label();
+            this.lblCompra = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -37,10 +41,7 @@
             this.btnProd = new System.Windows.Forms.Button();
             this.btnPresup = new System.Windows.Forms.Button();
             this.btnAdmon = new System.Windows.Forms.Button();
-            this.gbTipoCambio = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblCompra = new System.Windows.Forms.Label();
-            this.lblVenta = new System.Windows.Forms.Label();
+            this.btnIR = new System.Windows.Forms.Button();
             this.pnlToolbar.SuspendLayout();
             this.gbTipoCambio.SuspendLayout();
             this.SuspendLayout();
@@ -58,8 +59,58 @@
             this.pnlToolbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlToolbar.Location = new System.Drawing.Point(0, 0);
             this.pnlToolbar.Name = "pnlToolbar";
-            this.pnlToolbar.Size = new System.Drawing.Size(1176, 94);
+            this.pnlToolbar.Size = new System.Drawing.Size(1244, 94);
             this.pnlToolbar.TabIndex = 0;
+            // 
+            // gbTipoCambio
+            // 
+            this.gbTipoCambio.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gbTipoCambio.Controls.Add(this.btnIR);
+            this.gbTipoCambio.Controls.Add(this.lblVenta);
+            this.gbTipoCambio.Controls.Add(this.lblCompra);
+            this.gbTipoCambio.Controls.Add(this.label1);
+            this.gbTipoCambio.Controls.Add(this.label);
+            this.gbTipoCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbTipoCambio.Location = new System.Drawing.Point(661, 3);
+            this.gbTipoCambio.Name = "gbTipoCambio";
+            this.gbTipoCambio.Size = new System.Drawing.Size(378, 88);
+            this.gbTipoCambio.TabIndex = 10;
+            this.gbTipoCambio.TabStop = false;
+            this.gbTipoCambio.Text = "Tipo de cambio BCCR";
+            this.gbTipoCambio.Enter += new System.EventHandler(this.gbTipoCambio_Enter);
+            // 
+            // lblVenta
+            // 
+            this.lblVenta.AutoSize = true;
+            this.lblVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVenta.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.lblVenta.Location = new System.Drawing.Point(263, 39);
+            this.lblVenta.Name = "lblVenta";
+            this.lblVenta.Size = new System.Drawing.Size(24, 17);
+            this.lblVenta.TabIndex = 12;
+            this.lblVenta.Text = "₡ ";
+            // 
+            // lblCompra
+            // 
+            this.lblCompra.AutoSize = true;
+            this.lblCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompra.ForeColor = System.Drawing.Color.Tomato;
+            this.lblCompra.Location = new System.Drawing.Point(93, 39);
+            this.lblCompra.Name = "lblCompra";
+            this.lblCompra.Size = new System.Drawing.Size(24, 17);
+            this.lblCompra.TabIndex = 11;
+            this.lblCompra.Text = "₡ ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.MediumAquamarine;
+            this.label1.Location = new System.Drawing.Point(211, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Venta: ";
             // 
             // label
             // 
@@ -80,7 +131,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Image = global::Proyecto_Budget.Properties.Resources._1496303883_f08b;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLogout.Location = new System.Drawing.Point(1045, 0);
+            this.btnLogout.Location = new System.Drawing.Point(1113, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(131, 94);
             this.btnLogout.TabIndex = 5;
@@ -169,60 +220,23 @@
             this.btnAdmon.UseVisualStyleBackColor = true;
             this.btnAdmon.Click += new System.EventHandler(this.btnAdmon_Click);
             // 
-            // gbTipoCambio
+            // btnIR
             // 
-            this.gbTipoCambio.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.gbTipoCambio.Controls.Add(this.lblVenta);
-            this.gbTipoCambio.Controls.Add(this.lblCompra);
-            this.gbTipoCambio.Controls.Add(this.label1);
-            this.gbTipoCambio.Controls.Add(this.label);
-            this.gbTipoCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTipoCambio.Location = new System.Drawing.Point(661, 3);
-            this.gbTipoCambio.Name = "gbTipoCambio";
-            this.gbTipoCambio.Size = new System.Drawing.Size(378, 88);
-            this.gbTipoCambio.TabIndex = 10;
-            this.gbTipoCambio.TabStop = false;
-            this.gbTipoCambio.Text = "Tipo de cambio BCCR";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.label1.Location = new System.Drawing.Point(211, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Venta: ";
-            // 
-            // lblCompra
-            // 
-            this.lblCompra.AutoSize = true;
-            this.lblCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompra.ForeColor = System.Drawing.Color.Tomato;
-            this.lblCompra.Location = new System.Drawing.Point(93, 39);
-            this.lblCompra.Name = "lblCompra";
-            this.lblCompra.Size = new System.Drawing.Size(24, 17);
-            this.lblCompra.TabIndex = 11;
-            this.lblCompra.Text = "₡ ";
-            // 
-            // lblVenta
-            // 
-            this.lblVenta.AutoSize = true;
-            this.lblVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVenta.ForeColor = System.Drawing.Color.MediumAquamarine;
-            this.lblVenta.Location = new System.Drawing.Point(263, 39);
-            this.lblVenta.Name = "lblVenta";
-            this.lblVenta.Size = new System.Drawing.Size(24, 17);
-            this.lblVenta.TabIndex = 12;
-            this.lblVenta.Text = "₡ ";
+            this.btnIR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnIR.Location = new System.Drawing.Point(329, 57);
+            this.btnIR.Name = "btnIR";
+            this.btnIR.Size = new System.Drawing.Size(43, 25);
+            this.btnIR.TabIndex = 14;
+            this.btnIR.Text = "?";
+            this.btnIR.UseVisualStyleBackColor = true;
+            this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
             // 
             // frmPrincipalAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1176, 643);
+            this.ClientSize = new System.Drawing.Size(1244, 802);
             this.Controls.Add(this.pnlToolbar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -250,6 +264,7 @@
         private System.Windows.Forms.Label lblVenta;
         private System.Windows.Forms.Label lblCompra;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnIR;
     }
 }
 

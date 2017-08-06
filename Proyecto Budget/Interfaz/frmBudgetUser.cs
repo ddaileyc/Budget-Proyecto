@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -59,6 +60,7 @@ namespace Proyecto_Budget.Interfaz
                     //frmAprobarCompras.Show();
                 }
             }
+            gbTipoCambio.Dock = DockStyle.Left;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -74,6 +76,17 @@ namespace Proyecto_Budget.Interfaz
             {
                 login.Close();
             }
+        }
+
+        private void btnCompras_Click(object sender, EventArgs e)
+        {
+            frmCompras formCompras = new frmCompras();
+            formCompras.Show();
+        }
+
+        private void btnIR_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&CodCuadro=%20400");
         }
     }
 }

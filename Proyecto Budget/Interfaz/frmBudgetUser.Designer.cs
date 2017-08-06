@@ -40,6 +40,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnAdminUsuario = new System.Windows.Forms.Button();
+            this.btnIR = new System.Windows.Forms.Button();
             this.pnlToolbar.SuspendLayout();
             this.gbTipoCambio.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +109,7 @@
             // gbTipoCambio
             // 
             this.gbTipoCambio.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gbTipoCambio.Controls.Add(this.btnIR);
             this.gbTipoCambio.Controls.Add(this.lblVenta);
             this.gbTipoCambio.Controls.Add(this.lblCompra);
             this.gbTipoCambio.Controls.Add(this.label1);
@@ -195,6 +197,7 @@
             this.btnCompras.Text = "Compras";
             this.btnCompras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCompras.UseVisualStyleBackColor = true;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
             // 
             // btnAdminUsuario
             // 
@@ -210,6 +213,17 @@
             this.btnAdminUsuario.Text = "Usuario";
             this.btnAdminUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdminUsuario.UseVisualStyleBackColor = true;
+            // 
+            // btnIR
+            // 
+            this.btnIR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnIR.Location = new System.Drawing.Point(329, 57);
+            this.btnIR.Name = "btnIR";
+            this.btnIR.Size = new System.Drawing.Size(43, 25);
+            this.btnIR.TabIndex = 13;
+            this.btnIR.Text = "?";
+            this.btnIR.UseVisualStyleBackColor = true;
+            this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
             // 
             // frmBudgetUser
             // 
@@ -243,5 +257,6 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnConta;
         private System.Windows.Forms.Button btnPresup;
+        private System.Windows.Forms.Button btnIR;
     }
 }

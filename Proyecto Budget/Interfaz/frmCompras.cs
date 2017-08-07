@@ -34,8 +34,7 @@ namespace Proyecto_Budget.Interfaz
             lblDesc.Text = dgvProductosCompra.CurrentRow.Cells[2].Value.ToString();
             double precio = double.Parse(dgvProductosCompra.CurrentRow.Cells[3].Value.ToString());
             precio *= 1.13;
-            precio = Math.Round(precio, 2);
-            lblPrecio.Text += precio.ToString();
+            lblPrecio.Text += Math.Round(precio,2).ToString();
         }
     }
 }

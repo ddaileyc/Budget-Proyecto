@@ -633,6 +633,16 @@ namespace Proyecto_Budget.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_meanicons_59_197222 {
+            get {
+                object obj = ResourceManager.GetObject("if_meanicons_59_197222", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap if_shopping_cart_465074 {
             get {
                 object obj = ResourceManager.GetObject("if_shopping_cart_465074", resourceCulture);

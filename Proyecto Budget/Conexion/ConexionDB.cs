@@ -200,20 +200,6 @@ namespace Proyecto_Budget.Conexion
             }
         }
 
-        public void insertarUsuario(Modelo.Usuario usuario)
-        {
-            try
-            {
-                Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
-                budgetContext.Usuario.Add(usuario);
-                budgetContext.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Operación fallida", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         public void insertarPresupuesto(Modelo.Presupuesto presupuestoDB)
         {
             try

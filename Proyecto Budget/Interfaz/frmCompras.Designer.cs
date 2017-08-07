@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.dgvProductosCompra = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnComprar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,10 +46,14 @@
             this.lblDesc = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
+            this.btnComprar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosCompra)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtProducto
@@ -60,7 +62,7 @@
             this.txtProducto.Location = new System.Drawing.Point(184, 24);
             this.txtProducto.Multiline = true;
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(610, 46);
+            this.txtProducto.Size = new System.Drawing.Size(519, 46);
             this.txtProducto.TabIndex = 0;
             // 
             // dgvProductosCompra
@@ -93,49 +95,19 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(776, 228);
+            this.textBox1.Location = new System.Drawing.Point(724, 227);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(79, 20);
+            this.textBox1.Size = new System.Drawing.Size(55, 20);
             this.textBox1.TabIndex = 8;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Proyecto_Budget.Properties.Resources.if_shopping_cart_465074__1_;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 130);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::Proyecto_Budget.Properties.Resources._1497137621_circle_edit_search_thin;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(800, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 46);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(721, 231);
+            this.label1.Location = new System.Drawing.Point(721, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Cantidad:";
-            // 
-            // btnComprar
-            // 
-            this.btnComprar.Location = new System.Drawing.Point(776, 452);
-            this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(79, 23);
-            this.btnComprar.TabIndex = 10;
-            this.btnComprar.Text = "Comprar";
-            this.btnComprar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -161,9 +133,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(181, 264);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(98, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Compra actual:";
+            this.label3.Text = "Carrito de compras:";
             // 
             // label4
             // 
@@ -236,12 +208,49 @@
             this.lblPrecio.TabIndex = 17;
             this.lblPrecio.Text = "$ ";
             // 
+            // btnComprar
+            // 
+            this.btnComprar.BackgroundImage = global::Proyecto_Budget.Properties.Resources.if_meanicons_59_197222;
+            this.btnComprar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnComprar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnComprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnComprar.Location = new System.Drawing.Point(707, 395);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(72, 80);
+            this.btnComprar.TabIndex = 10;
+            this.btnComprar.Text = "Comprar";
+            this.btnComprar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolTip1.SetToolTip(this.btnComprar, "Agregar productos al carrito");
+            this.btnComprar.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Proyecto_Budget.Properties.Resources.if_shopping_cart_465074__1_;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 130);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::Proyecto_Budget.Properties.Resources._1497137621_circle_edit_search_thin;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(724, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 46);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(873, 489);
+            this.ClientSize = new System.Drawing.Size(791, 489);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
@@ -260,8 +269,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosCompra)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +297,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -27,7 +27,7 @@ namespace Proyecto_Budget.Interfaz
 
         private void btnAgregarUsuario_Click(object sender, EventArgs e)
         {
-            Control.CRUD_Usuario usuario = new Control.CRUD_Usuario();
+            Modelo.BudgetEntities budgetContext = new Modelo.BudgetEntities();
             Modelo.Usuario usuarioNuevo = new Modelo.Usuario();
             usuarioNuevo.Nombre = txtNombre.Text;
             usuarioNuevo.Apellido = txtApellidos.Text;
@@ -39,7 +39,8 @@ namespace Proyecto_Budget.Interfaz
             usuarioNuevo.Contrasena = usuarioNuevo.Id_sistema;
             try
             {
-                usuario.insertarUsuario(usuarioNuevo);
+                budgetContext.Usuario.Add(usuarioNuevo);
+                budgetContext.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -153,15 +154,15 @@ namespace Proyecto_Budget.Interfaz
             switch (indice)
             {
                 case 0:
-                    return 50;
+                    return 10;
                 case 1:
-                    return 100;
+                    return 20;
                 case 2:
-                    return 150;
+                    return 30;
                 case 3:
-                    return 200;
+                    return 40;
                 default:
-                    return 200;
+                    return 40;
             }
         }
 
@@ -197,7 +198,7 @@ namespace Proyecto_Budget.Interfaz
             frmPassReset resetearPassword = new frmPassReset(dgvUsuarios.CurrentRow.Cells[6].Value.ToString());
             resetearPassword.Show();
         }
-     
+
         private void dgvUsuarios_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             txtNombre.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();

@@ -14,7 +14,8 @@ namespace Proyecto_Budget.Interfaz
 {
     public partial class frmBudgetUser : Form
     {
-        public frmBudgetUser(int rol, int dpto)
+        public string userConstructor;
+        public frmBudgetUser(int rol, int dpto, string user)
         {
             InitializeComponent();
             //Carga de web service del BBCR
@@ -61,6 +62,7 @@ namespace Proyecto_Budget.Interfaz
                 }
             }
             gbTipoCambio.Dock = DockStyle.Left;
+            userConstructor = user;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -87,6 +89,20 @@ namespace Proyecto_Budget.Interfaz
         private void btnIR_Click(object sender, EventArgs e)
         {
             Process.Start("http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/Cuadros/frmVerCatCuadro.aspx?idioma=1&CodCuadro=%20400");
+        }
+
+        private void btnPresup_Click(object sender, EventArgs e)
+        {
+            frmPresupuestos presupuestos = new frmPresupuestos();
+            presupuestos.MdiParent = this;
+            presupuestos.Show();
+        }
+
+        private void btnAdminUsuario_Click(object sender, EventArgs e)
+        {
+            frmEditarUsuario editarUsuario = new frmEditarUsuario(userConstructor);
+            editarUsuario.MdiParent = this;
+            editarUsuario.Show();
         }
     }
 }

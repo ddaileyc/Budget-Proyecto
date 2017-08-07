@@ -20,7 +20,7 @@ namespace Proyecto_Budget.Interfaz
         private void btnLogin_Click(object sender, EventArgs e)
         {
             frmPrincipalAdmin formAdmin = new frmPrincipalAdmin();
-            frmBudgetUser formUsuario = new frmBudgetUser(setPermisos(), setDpto());
+            frmBudgetUser formUsuario = new frmBudgetUser(setPermisos(), setDpto(), setUsuario());
             Control.CRUD_Usuario validacion = new Control.CRUD_Usuario();
             if (validacion.ValidarUsuario(txtUsuario.Text, txtPassword.Text))
             {
@@ -109,6 +109,11 @@ namespace Proyecto_Budget.Interfaz
                 return 0;
             }
             return 0;
+        }
+
+        private string setUsuario()
+        {
+            return txtUsuario.Text;
         }
         #endregion
     }

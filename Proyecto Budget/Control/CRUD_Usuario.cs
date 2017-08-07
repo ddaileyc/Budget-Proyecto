@@ -17,11 +17,6 @@ namespace Proyecto_Budget.Control
             return controlDBUsuario.ValidarUsuario(usuario, contrasena);
         }
 
-        public void insertarUsuario(Modelo.Usuario usuario)
-        {
-            controlDBUsuario.insertarUsuario(usuario);
-        }
-
         public void eliminarUsuario(Modelo.Usuario usuario)
         {
             controlDBUsuario.eliminarUsuario(usuario);

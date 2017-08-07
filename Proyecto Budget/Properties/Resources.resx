@@ -139,8 +139,8 @@
   <data name="1496303811_f067" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303811_f067.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496303900_truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496303900_truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_shopping_cart_465074" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_shopping_cart_465074.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496303887_calculator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303887_calculator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,6 +162,9 @@
   </data>
   <data name="1496951514_103" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496951514_103.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496303900_truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496303900_truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496303816_f080" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303816_f080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,6 +235,9 @@
   <data name="1496303796_warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303796_warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1496953156_f007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496953156_f007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1496305342_bar-chart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496305342_bar-chart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -250,8 +256,8 @@
   <data name="1496729900_circle-edit-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496729900_circle-edit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1496729902_circle-edit-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496729902_circle-edit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_shopping_cart_465074 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_shopping_cart_465074 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496303895_f0c0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303895_f0c0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -277,19 +283,19 @@
   <data name="1496303852_fax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496303852_fax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_shopping_cart_465074" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_shopping_cart_465074.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1496953156_f007" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496953156_f007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1496303881_f08b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1496303881_f08b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="if_ic_add_shopping_cart_48px_352007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_ic_add_shopping_cart_48px_352007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1496951538_88" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1496951538_88.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="if_shopping_cart_465074 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\if_shopping_cart_465074 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1496303881_f08b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496303881_f08b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1496729902_circle-edit-line" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1496729902_circle-edit-line.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="if_meanicons_59_197222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\if_meanicons_59_197222.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

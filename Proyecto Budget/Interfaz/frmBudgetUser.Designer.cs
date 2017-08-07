@@ -33,6 +33,7 @@
             this.btnConta = new System.Windows.Forms.Button();
             this.btnPresup = new System.Windows.Forms.Button();
             this.gbTipoCambio = new System.Windows.Forms.GroupBox();
+            this.btnIR = new System.Windows.Forms.Button();
             this.lblVenta = new System.Windows.Forms.Label();
             this.lblCompra = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnCompras = new System.Windows.Forms.Button();
             this.btnAdminUsuario = new System.Windows.Forms.Button();
-            this.btnIR = new System.Windows.Forms.Button();
             this.pnlToolbar.SuspendLayout();
             this.gbTipoCambio.SuspendLayout();
             this.SuspendLayout();
@@ -105,6 +105,7 @@
             this.btnPresup.Text = "Presupuestos";
             this.btnPresup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPresup.UseVisualStyleBackColor = true;
+            this.btnPresup.Click += new System.EventHandler(this.btnPresup_Click);
             // 
             // gbTipoCambio
             // 
@@ -121,6 +122,17 @@
             this.gbTipoCambio.TabIndex = 10;
             this.gbTipoCambio.TabStop = false;
             this.gbTipoCambio.Text = "Tipo de cambio BCCR";
+            // 
+            // btnIR
+            // 
+            this.btnIR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnIR.Location = new System.Drawing.Point(329, 57);
+            this.btnIR.Name = "btnIR";
+            this.btnIR.Size = new System.Drawing.Size(43, 25);
+            this.btnIR.TabIndex = 13;
+            this.btnIR.Text = "?";
+            this.btnIR.UseVisualStyleBackColor = true;
+            this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
             // 
             // lblVenta
             // 
@@ -213,17 +225,7 @@
             this.btnAdminUsuario.Text = "Usuario";
             this.btnAdminUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdminUsuario.UseVisualStyleBackColor = true;
-            // 
-            // btnIR
-            // 
-            this.btnIR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnIR.Location = new System.Drawing.Point(329, 57);
-            this.btnIR.Name = "btnIR";
-            this.btnIR.Size = new System.Drawing.Size(43, 25);
-            this.btnIR.TabIndex = 13;
-            this.btnIR.Text = "?";
-            this.btnIR.UseVisualStyleBackColor = true;
-            this.btnIR.Click += new System.EventHandler(this.btnIR_Click);
+            this.btnAdminUsuario.Click += new System.EventHandler(this.btnAdminUsuario_Click);
             // 
             // frmBudgetUser
             // 
@@ -232,6 +234,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(1242, 804);
             this.Controls.Add(this.pnlToolbar);
+            this.IsMdiContainer = true;
             this.Name = "frmBudgetUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BUDGET | Sistema de Control de Presupuestos | Usuario";
